@@ -34,9 +34,10 @@ namespace CarpetHandyMan.Blazor.Services
             return await JsonSerializer.DeserializeAsync<List<CarpetListReponse>>(result, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
-        public Task<CarpetListReponse> GetOneCarpetAsync(Guid id)
+        public async Task<CarpetListReponse> GetOneCarpetAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var result = await HttpClient.GetStreamAsync($"/carpet/{id}");
+            return await JsonSerializer.DeserializeAsync<CarpetListReponse>(result, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
         public Task UpdateCarpetAsync(UpdateCarpetRequest carpetRequest)

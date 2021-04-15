@@ -4,7 +4,6 @@ C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\bin\Debug\net
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\bin\Debug\net5.0\CarpetHandyMan.Core.dll
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\bin\Debug\net5.0\ref\CarpetHandyMan.Core.dll
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\bin\Debug\net5.0\CarpetHandyMan.Core.pdb
-C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\net5.0\CarpetHandyMan.Core.csprojAssemblyReference.cache
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\net5.0\CarpetHandyMan.Core.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\net5.0\CarpetHandyMan.Core.AssemblyInfoInputs.cache
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\net5.0\CarpetHandyMan.Core.AssemblyInfo.cs
@@ -13,3 +12,4 @@ C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\net
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\net5.0\ref\CarpetHandyMan.Core.dll
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\net5.0\CarpetHandyMan.Core.pdb
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\net5.0\CarpetHandyMan.Core.genruntimeconfig.cache
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\net5.0\CarpetHandyMan.Core.csprojAssemblyReference.cache

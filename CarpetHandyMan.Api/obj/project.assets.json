@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Ardalis.ApiEndpoints/3.0.0": {
+      "Ardalis.ApiEndpoints/3.1.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Core": "2.2.5"
@@ -2435,15 +2435,15 @@
     }
   },
   "libraries": {
-    "Ardalis.ApiEndpoints/3.0.0": {
-      "sha512": "JccrzloGpqxa4TcBNYNe7UmvltpEVpaUqhLiTJeNQWrNWb5CjgxF6rnfG459xfnSloGQuVuuJSxfiJ55LO9C9w==",
+    "Ardalis.ApiEndpoints/3.1.0": {
+      "sha512": "LpD9PtQ4XF2YveVonU3/V1NykxKEJqky/eH+dG4nJB6rjifStj8nP9xHc+AAUU6bKycH1uM3vyY6pqbp92HNGA==",
       "type": "package",
-      "path": "ardalis.apiendpoints/3.0.0",
+      "path": "ardalis.apiendpoints/3.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.txt",
-        "ardalis.apiendpoints.3.0.0.nupkg.sha512",
+        "ardalis.apiendpoints.3.1.0.nupkg.sha512",
         "ardalis.apiendpoints.nuspec",
         "lib/netstandard2.0/Ardalis.ApiEndpoints.dll",
         "lib/netstandard2.0/Ardalis.ApiEndpoints.pdb"
@@ -8069,7 +8069,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Ardalis.ApiEndpoints >= 3.0.0",
+      "Ardalis.ApiEndpoints >= 3.1.0",
       "CarpetHandyMan.Core >= 1.0.0",
       "CarpetHandyMan.Shared >= 1.0.0",
       "CarpetHandyMan.infrastructure >= 1.0.0",
@@ -8088,11 +8088,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\swarchuck\\source\\repos\\CarpetHandyMan\\CarpetHandyMan\\CarpetHandyMan.Api.csproj",
+      "projectUniqueName": "C:\\Users\\swarchuck\\source\\repos\\CarpetHandyMan\\CarpetHandyMan.Api\\CarpetHandyMan.Api.csproj",
       "projectName": "CarpetHandyMan.Api",
-      "projectPath": "C:\\Users\\swarchuck\\source\\repos\\CarpetHandyMan\\CarpetHandyMan\\CarpetHandyMan.Api.csproj",
+      "projectPath": "C:\\Users\\swarchuck\\source\\repos\\CarpetHandyMan\\CarpetHandyMan.Api\\CarpetHandyMan.Api.csproj",
       "packagesPath": "C:\\Users\\swarchuck\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\swarchuck\\source\\repos\\CarpetHandyMan\\CarpetHandyMan\\obj\\",
+      "outputPath": "C:\\Users\\swarchuck\\source\\repos\\CarpetHandyMan\\CarpetHandyMan.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -8137,7 +8137,7 @@
         "dependencies": {
           "Ardalis.ApiEndpoints": {
             "target": "Package",
-            "version": "[3.0.0, )"
+            "version": "[3.1.0, )"
           },
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",

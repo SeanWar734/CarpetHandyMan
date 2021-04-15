@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5vOIFOvmYEzUvsPMg9rITw1Ve8gBlMeME3G9Yyu/LKXuZH9g+LkFV94smRKSYKoHRuTJ+bYDYOd7fgJummiTJw==",
+  "dgSpecHash": "72OcqeERQbeOzICZOQcFzQuGitX0mN0GNDNnWedZS885urKmeu8ltl0OSnXxo0qQn0CMN+dfqhX/YmDD3lKMRw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\swarchuck\\source\\repos\\CarpetHandyMan\\CarpetHandyMan\\CarpetHandyMan.Api.csproj",
+  "projectFilePath": "C:\\Users\\swarchuck\\source\\repos\\CarpetHandyMan\\CarpetHandyMan.Api\\CarpetHandyMan.Api.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\swarchuck\\.nuget\\packages\\ardalis.apiendpoints\\3.0.0\\ardalis.apiendpoints.3.0.0.nupkg.sha512",
+    "C:\\Users\\swarchuck\\.nuget\\packages\\ardalis.apiendpoints\\3.1.0\\ardalis.apiendpoints.3.1.0.nupkg.sha512",
     "C:\\Users\\swarchuck\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\swarchuck\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\swarchuck\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
