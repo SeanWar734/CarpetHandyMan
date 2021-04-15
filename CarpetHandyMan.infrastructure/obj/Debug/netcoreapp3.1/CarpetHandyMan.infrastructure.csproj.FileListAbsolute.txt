@@ -1,0 +1,15 @@
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\bin\Debug\netcoreapp3.1\CarpetHandyMan.Core.dll
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\obj\Debug\netcoreapp3.1\CarpetHandyMan.infrastructure.csprojAssemblyReference.cache
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\obj\Debug\netcoreapp3.1\CarpetHandyMan.infrastructure.AssemblyInfoInputs.cache
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\obj\Debug\netcoreapp3.1\CarpetHandyMan.infrastructure.AssemblyInfo.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\bin\Debug\netcoreapp3.1\CarpetHandyMan.infrastructure.deps.json
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\bin\Debug\netcoreapp3.1\CarpetHandyMan.infrastructure.runtimeconfig.json
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\bin\Debug\netcoreapp3.1\CarpetHandyMan.infrastructure.runtimeconfig.dev.json
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\bin\Debug\netcoreapp3.1\CarpetHandyMan.infrastructure.dll
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\bin\Debug\netcoreapp3.1\CarpetHandyMan.infrastructure.pdb
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\bin\Debug\netcoreapp3.1\CarpetHandyMan.Core.pdb
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\obj\Debug\netcoreapp3.1\CarpetHandyMan.infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\obj\Debug\netcoreapp3.1\CarpetHandyMan.infrastructure.csproj.CopyComplete
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\obj\Debug\netcoreapp3.1\CarpetHandyMan.infrastructure.dll
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\obj\Debug\netcoreapp3.1\CarpetHandyMan.infrastructure.pdb
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.infrastructure\obj\Debug\netcoreapp3.1\CarpetHandyMan.infrastructure.genruntimeconfig.cache

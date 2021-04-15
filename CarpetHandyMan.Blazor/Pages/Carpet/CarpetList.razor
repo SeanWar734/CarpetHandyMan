@@ -1,0 +1,21 @@
+﻿@page "/carpet" 
+@inherits CarpetListBase
+
+@if (Carpets != null)
+{
+    foreach (var Carpet in Carpets)
+    {
+        <div>
+            <div>@Carpet.Name</div>
+            <div>@Carpet.Brand</div>
+            <div>@Carpet.Style</div>
+            <div>@Carpet.Description</div>
+            <div>@Carpet.SquareYardPrice.ToString("#.##")</div>
+        </div>
+        <br />
+    }
+}
+else
+{
+    <span>Loading...</span>
+}

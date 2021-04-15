@@ -1,0 +1,12 @@
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\bin\Debug\netcoreapp3.1\CarpetHandyMan.Core.deps.json
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\bin\Debug\netcoreapp3.1\CarpetHandyMan.Core.runtimeconfig.json
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\bin\Debug\netcoreapp3.1\CarpetHandyMan.Core.runtimeconfig.dev.json
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\bin\Debug\netcoreapp3.1\CarpetHandyMan.Core.dll
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\bin\Debug\netcoreapp3.1\CarpetHandyMan.Core.pdb
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\netcoreapp3.1\CarpetHandyMan.Core.csprojAssemblyReference.cache
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\netcoreapp3.1\CarpetHandyMan.Core.AssemblyInfoInputs.cache
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\netcoreapp3.1\CarpetHandyMan.Core.AssemblyInfo.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\netcoreapp3.1\CarpetHandyMan.Core.csproj.CoreCompileInputs.cache
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\netcoreapp3.1\CarpetHandyMan.Core.dll
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\netcoreapp3.1\CarpetHandyMan.Core.pdb
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Core\obj\Debug\netcoreapp3.1\CarpetHandyMan.Core.genruntimeconfig.cache
