@@ -50,3 +50,8 @@ C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\n
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\ref\CarpetHandyMan.Blazor.dll
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\CarpetHandyMan.Blazor.pdb
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\CarpetHandyMan.Blazor.genruntimeconfig.cache
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\bin\Debug\net5.0\CarpetHandyMan.Blazor.StaticWebAssets.xml
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\bin\Debug\net5.0\Blazored.Modal.dll
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\bin\Debug\net5.0\Microsoft.JSInterop.WebAssembly.dll
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\Carpet\ViewOneCarpet.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Carpet\ViewOneCarpet.razor.g.cs

@@ -6,11 +6,11 @@
     foreach (var Carpet in Carpets)
     {
         <div>
-            <div>@Carpet.Name</div>
+            <div><button @onclick="@(() => ShowCarpetModal(Carpet.Id))">@Carpet.Name</button></div>
             <div>@Carpet.Brand</div>
             <div>@Carpet.Style</div>
             <div>@Carpet.Description</div>
-            <div>@Carpet.SquareYardPrice.ToString("#.##")</div>
+            <div>@Carpet.SquareYardPrice.ToString("$#.##")</div>
         </div>
         <br />
     }

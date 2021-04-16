@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -18,31 +19,33 @@ namespace CarpetHandyMan.Blazor.Services
             HttpClient = httpClient;
         }
 
-        public Task AddNewCarpetAsync(CreateCarpetRequest carpetRequest)
+        public async Task AddNewCarpetAsync(CreateCarpetRequest carpetRequest)
         {
-            throw new NotImplementedException();
+            var CarpetRequestJson = new StringContent(JsonSerializer.Serialize(carpetRequest), Encoding.UTF8, "application/json");
+            await HttpClient.PostAsync($"carpet", CarpetRequestJson);
         }
 
-        public Task DeleteCarpetAsync(Guid id)
+        public async Task DeleteCarpetAsync(Guid id)
         {
-            throw new NotImplementedException();
+            await HttpClient.DeleteAsync($"carpet/{id}");
         }
 
         public async Task<List<CarpetListReponse>> GetAllCarpetAsync()
         {
-            var result = await HttpClient.GetStreamAsync($"/carpet");
+            var result = await HttpClient.GetStreamAsync($"carpet");
             return await JsonSerializer.DeserializeAsync<List<CarpetListReponse>>(result, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
         public async Task<CarpetListReponse> GetOneCarpetAsync(Guid id)
         {
-            var result = await HttpClient.GetStreamAsync($"/carpet/{id}");
+            var result = await HttpClient.GetStreamAsync($"carpet/{id}");
             return await JsonSerializer.DeserializeAsync<CarpetListReponse>(result, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
-        public Task UpdateCarpetAsync(UpdateCarpetRequest carpetRequest)
+        public async Task UpdateCarpetAsync(UpdateCarpetRequest carpetRequest)
         {
-            throw new NotImplementedException();
+            var CarpetJson = new StringContent(JsonSerializer.Serialize(carpetRequest), Encoding.UTF8, "application/json");
+            await HttpClient.PutAsync($"purchaseitems/{carpetRequest.Id}", CarpetJson);
         }
     }
 }

@@ -75,6 +75,20 @@ using CarpetHandyMan.Blazor.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 10 "C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\_Imports.razor"
+using Blazored.Modal;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 11 "C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\_Imports.razor"
+using Blazored.Modal.Services;
+
+#line default
+#line hidden
+#nullable disable
     public partial class MainLayout : LayoutComponentBase
     {
         #pragma warning disable 1998

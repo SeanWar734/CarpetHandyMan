@@ -1,3 +1,4 @@
+using Blazored.Modal;
 using CarpetHandyMan.Blazor.Data;
 using CarpetHandyMan.Blazor.Interfaces;
 using CarpetHandyMan.Blazor.Services;
@@ -30,6 +31,7 @@ namespace CarpetHandyMan.Blazor
         {
             services.AddHttpClient<ICarpetService, CarpetService>(client => client.BaseAddress = new Uri("https://localhost:44311/"));
 
+            services.AddBlazoredModal();
             services.AddRazorPages();
             services.AddServerSideBlazor();
 
