@@ -97,7 +97,7 @@ using Blazored.Modal.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 23 "C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\Shared\NavMenu.razor"
+#line 28 "C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = true;
 

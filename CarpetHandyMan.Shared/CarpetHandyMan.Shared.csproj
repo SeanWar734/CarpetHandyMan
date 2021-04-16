@@ -10,7 +10,6 @@
     <Folder Include="Installers\" />
     <Folder Include="Orders\" />
     <Folder Include="Retailers\" />
-    <Folder Include="Rooms\" />
     <Folder Include="Staircases\" />
     <Folder Include="Stairs\" />
   </ItemGroup>

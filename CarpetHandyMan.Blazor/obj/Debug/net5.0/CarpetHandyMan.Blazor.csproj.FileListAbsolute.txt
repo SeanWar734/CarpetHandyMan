@@ -55,3 +55,14 @@ C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\bin\Debug\n
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\bin\Debug\net5.0\Microsoft.JSInterop.WebAssembly.dll
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\Carpet\ViewOneCarpet.razor.g.cs
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Carpet\ViewOneCarpet.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\Estimate\AddRoomModal.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\Estimate\Estimate.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Estimate\AddRoomModal.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Estimate\Estimate.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\bin\Debug\net5.0\Humanizer.dll
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll

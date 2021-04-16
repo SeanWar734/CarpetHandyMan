@@ -1,0 +1,29 @@
+﻿@page "/estimate"
+@inherits EstimateBase 
+
+@if (Carpets != null)
+{
+    <button @onclick="(() => ShowAddRoomModal(BuildingId))">Add New Room</button>
+    <br />
+    <div>
+        @if (Rooms.Count != 0)
+        {
+            @foreach (var Room in Rooms)
+            {
+                <div>
+                    <div>@Room.RoomName</div>
+                    <div>Length: @Room.Length</div>
+                    <dvi>Width: @Room.Width</dvi>
+                </div>
+            }
+        }
+        else
+        {
+            <div>Add More Rooms for Estimate</div>
+        }
+    </div>
+}
+else
+{
+    <span>Loading...</span>
+}

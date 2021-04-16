@@ -251,6 +251,9 @@ namespace CarpetHandyMan.Api.Migrations
                     b.Property<decimal>("Length")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("RoomName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("Width")
                         .HasColumnType("decimal(18,2)");
 

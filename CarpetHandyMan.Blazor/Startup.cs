@@ -30,6 +30,7 @@ namespace CarpetHandyMan.Blazor
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpClient<ICarpetService, CarpetService>(client => client.BaseAddress = new Uri("https://localhost:44311/"));
+            services.AddHttpClient<IRoomService, RoomService>(client => client.BaseAddress = new Uri("https://localhost:44311/"));
 
             services.AddBlazoredModal();
             services.AddRazorPages();
@@ -37,6 +38,7 @@ namespace CarpetHandyMan.Blazor
 
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<CarpetService>();
+            services.AddSingleton<RoomService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

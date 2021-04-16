@@ -1,0 +1,37 @@
+﻿@inherits AddRoomModalBase
+
+@if (NewRoom != null)
+{
+    <EditForm Model="NewRoom" OnValidSubmit="(() => AddNewRoom(NewRoom))">
+        <div>
+            <div>Name</div>
+            <InputText @bind-Value="NewRoom.RoomName" />
+        </div>
+        <div>
+            <div>Length</div>
+            <InputNumber @bind-Value="NewRoom.Length" />
+        </div>
+        <div>
+            <div>Width</div>
+            <InputNumber @bind-Value="NewRoom.Width" />
+        </div>
+        <div>
+            @if (Carpet != null)
+            {
+                <div>Carpet</div>
+                <InputSelect @bind-Value="NewRoom.CarpetId">
+                    @foreach (var carpet in Carpet)
+                            {
+                        <option value="@carpet.Id">[@carpet.Brand] @carpet.Name $@carpet.SquareYardPrice</option>
+                            }
+                </InputSelect>
+            }
+        </div>
+        <button type="submit">Add</button>
+    </EditForm>
+}
+
+else
+{
+    <span>Loading...</span>
+}

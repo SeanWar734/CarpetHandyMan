@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace CarpetHandyMan.Api.Endpoints.Carpets
 {
-    public class Get : BaseAsyncEndpoint.WithRequest<Guid>.WithResponse<CarpetSingleResponse>
+    public class GetById : BaseAsyncEndpoint.WithRequest<Guid>.WithResponse<CarpetSingleResponse>
     {
         [HttpGet("/carpet/{id}")]
         public override async Task<ActionResult<CarpetSingleResponse>> HandleAsync(Guid id, CancellationToken cancellationToken = default)
