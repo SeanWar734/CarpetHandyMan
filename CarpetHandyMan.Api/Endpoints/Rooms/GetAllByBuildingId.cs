@@ -24,9 +24,12 @@ namespace CarpetHandyMan.Api.Endpoints.Rooms
                           ,r.[BuildingId]
                           ,r.[CarpetId]
                           ,r.[RoomName]
+                          ,c.[Name] AS CarpetName
                           ,r.[Width]
                           ,r.[Length]
                       FROM [dbo].[Rooms] r
+                      JOIN [dbo].[Carpet] c
+                      ON r.[CarpetId] = c.[Id]
                       WHERE r.[BuildingId] = @Id;";
             var Carpet = await connection.ExecuteQueryAsync<RoomListResponse>(sql, new { Id = id }, cancellationToken: cancellationToken);
             return Ok(Carpet);

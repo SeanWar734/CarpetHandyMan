@@ -24,6 +24,7 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
         public List<CarpetListReponse> Carpets;
         public decimal TotalLength;
         public decimal TotalCost;
+        public decimal TotalCostHigh;
 
         protected async override Task OnInitializedAsync()
         {
@@ -36,12 +37,15 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
             TotalLength = 0;
             TotalCost = 0;
             Rooms = await RoomService.GetAllRoomsByBuildingIdAsync(BuildingId);
+            
             foreach (var Room in Rooms)
             {
                 TotalLength += Room.Length;
                 var Carpet = Carpets.Where(c => c.Id == Room.CarpetId).FirstOrDefault();
                 TotalCost += (((Room.Width * Room.Length) / 9) * Carpet.SquareYardPrice);
             }
+
+            TotalCostHigh = TotalCost * 1.12m;
         }
 
         public async Task ShowAddRoomModal(Guid BuildingId)

@@ -12,17 +12,17 @@
                 @foreach (var Room in Rooms)
                 {
                     <div class="border-2 w-min p-2 border-black rounded-md pt">
-                        <div class="text font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200">@Room.RoomName</div>
-                        <div class="text-xl">Length:</div>
-                        <div class="">@Room.Length.ToString("#.##") Feet</div>
-                        <div class="text-xl">Width:</div>
-                        <div>@Room.Width.ToString("#.##") Feet</div>
+                        <div class="text-xl font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200">@Room.RoomName</div>
+                        <div class="text-xl">Length: @Room.Length.ToString("#.##") Feet</div>
+                        <div class="text-xl">Width: @Room.Width.ToString("#.##") Feet</div>
+                        <div class="text-xl">Carpet: @Room.CarpetName</div>
                     </div>
                     <br />
                 }
                 <div>
-                    <div>Total Length: @TotalLength.ToString("#.##") Feet</div>
-                    <div>Total Cost: @TotalCost.ToString("C")</div>
+                    <div class="font-semibold">Total Length: @TotalLength.ToString("#.##") Feet</div>
+                    <div class="text-xl font-bold">Estimate Low Cost: @TotalCost.ToString("C")</div>
+                    <div class="text-xl font-bold">Estimate High Cost: @TotalCostHigh.ToString("C")</div>
                 </div>
             </div>
         }

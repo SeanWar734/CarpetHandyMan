@@ -3,13 +3,12 @@
 @if (Carpet != null)
 {
     <div>
-        <div>@Carpet.Name</div>
-        <div>@Carpet.Brand</div>
-        <div>@Carpet.Style</div>
-        <div>@Carpet.Description</div>
-        <div>@Carpet.SquareYardPrice.ToString("$#.##")</div>
+        <div class="font-semibold">Name: @Carpet.Name</div>
+        <div class="font-semibold">Brand: @Carpet.Brand</div>
+        <div class="font-semibold">Style: @Carpet.Style</div>
+        <div class="font-semibold">Description: @Carpet.Description</div>
+        <div class="font-semibold">Yard Price: @Carpet.SquareYardPrice.ToString("$#.##")</div>
     </div>
-    <br />
 }
 else
 {

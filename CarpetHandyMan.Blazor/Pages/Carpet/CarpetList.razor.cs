@@ -36,5 +36,16 @@ namespace CarpetHandyMan.Blazor.Pages.Carpet
 
             var CarpetModal = Modal.Show<ViewOneCarpet>("View Carpet", parameters);
         }
+
+        public async Task ShowAddCarpetModal()
+        {
+            var AddCarpetModal = Modal.Show<AddCarpet>("Add Carpet");
+
+            var result = await AddCarpetModal.Result;
+            if (!result.Cancelled)
+            {
+                await Refresh();
+            }
+        }
     }
 }

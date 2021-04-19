@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarpetHandyMan.Shared", "Ca
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarpetHandyMan.Blazor", "CarpetHandyMan.Blazor\CarpetHandyMan.Blazor.csproj", "{2E388FE8-0320-4413-AFB3-FC1ABF8256BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarpetHandyMan.Api", "CarpetHandyMan.Api\CarpetHandyMan.Api.csproj", "{3762BF4E-24FD-4BF2-8290-A6390BFB5E87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarpetHandyMan.Api", "CarpetHandyMan.Api\CarpetHandyMan.Api.csproj", "{3762BF4E-24FD-4BF2-8290-A6390BFB5E87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
