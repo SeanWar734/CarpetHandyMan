@@ -3,31 +3,48 @@
 @if (NewRoom != null)
 {
     <EditForm Model="NewRoom" OnValidSubmit="(() => AddNewRoom(NewRoom))">
-        <div>
-            <div>Name</div>
-            <InputText @bind-Value="NewRoom.RoomName" />
+        <div class="p-2">
+            <div class="p-2">
+                <div class="border-2 rounded-md border-gray-700 bg-gray-200 p-2">
+                    <div class="text-2xl">Name</div>
+                    <div class="border-black">
+                        <InputText @bind-Value="NewRoom.RoomName" />
+                    </div>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="border-2 rounded-md border-gray-700 bg-gray-200 p-2">
+                    <div class="text-2xl">Length</div>
+                    <div class="border-black">
+                        <InputNumber @bind-Value="NewRoom.Length" />
+                    </div>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="border-2 rounded-md border-gray-700 bg-gray-200 p-2">
+                    <div class="text-2xl">Width</div>
+                    <div class="border-black">
+                        <InputNumber @bind-Value="NewRoom.Width" />
+                    </div>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="border-2 rounded-md border-gray-700 bg-gray-200 p-2">
+                    @if (Carpet != null)
+                    {
+                        <div class="text-2xl">Carpet</div>
+                        <div class="border-black">
+                            <InputSelect @bind-Value="NewRoom.CarpetId">
+                                @foreach (var carpet in Carpet)
+                                        {
+                                    <option value="@carpet.Id">[@carpet.Brand] @carpet.Name $@carpet.SquareYardPrice</option>
+                                        }
+                            </InputSelect>
+                        </div>}
+                </div>
+            </div>
         </div>
-        <div>
-            <div>Length</div>
-            <InputNumber @bind-Value="NewRoom.Length" />
-        </div>
-        <div>
-            <div>Width</div>
-            <InputNumber @bind-Value="NewRoom.Width" />
-        </div>
-        <div>
-            @if (Carpet != null)
-            {
-                <div>Carpet</div>
-                <InputSelect @bind-Value="NewRoom.CarpetId">
-                    @foreach (var carpet in Carpet)
-                            {
-                        <option value="@carpet.Id">[@carpet.Brand] @carpet.Name $@carpet.SquareYardPrice</option>
-                            }
-                </InputSelect>
-            }
-        </div>
-        <button type="submit">Add</button>
+        <button class="float-right border-2 p-1 bg-gray-200 border-gray-700 rounded-md" type="submit">Add</button>
     </EditForm>
 }
 

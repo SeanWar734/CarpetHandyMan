@@ -1,26 +1,38 @@
 ﻿@page "/estimate"
-@inherits EstimateBase 
+@inherits EstimateBase
 
 @if (Carpets != null)
 {
-    <button @onclick="(() => ShowAddRoomModal(BuildingId))">Add New Room</button>
-    <br />
-    <div>
+    @if (Rooms != null)
+    {
         @if (Rooms.Count != 0)
         {
-            @foreach (var Room in Rooms)
-            {
+            <div class="border-2 border-black p-2 float-right w-min">
+
+                @foreach (var Room in Rooms)
+                {
+                    <div class="border-2 w-min p-2 border-black rounded-md pt">
+                        <div class="text font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200">@Room.RoomName</div>
+                        <div class="text-xl">Length:</div>
+                        <div class="">@Room.Length.ToString("#.##") Feet</div>
+                        <div class="text-xl">Width:</div>
+                        <div>@Room.Width.ToString("#.##") Feet</div>
+                    </div>
+                    <br />
+                }
                 <div>
-                    <div>@Room.RoomName</div>
-                    <div>Length: @Room.Length</div>
-                    <dvi>Width: @Room.Width</dvi>
+                    <div>Total Length: @TotalLength.ToString("#.##") Feet</div>
+                    <div>Total Cost: @TotalCost.ToString("C")</div>
                 </div>
-            }
+            </div>
         }
         else
         {
-            <div>Add More Rooms for Estimate</div>
+            <div class="border-2 w-min p-2 border-black rounded-md">Add More Rooms for Estimate</div>
         }
+    }
+    <div class="p-2">
+        <button class="text font-bold border-2 border-gray-700 p-1 rounded-md bg-gray-200" @onclick="(() => ShowAddRoomModal(BuildingId))">Add New Room</button>
     </div>
 }
 else

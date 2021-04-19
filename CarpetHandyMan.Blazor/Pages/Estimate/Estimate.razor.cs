@@ -19,9 +19,11 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
 
         [CascadingParameter] public IModalService Modal { get; set; }
 
-        public Guid BuildingId { get; set; } = Guid.NewGuid();
+        public Guid BuildingId = Guid.Parse("bac8fdb0-1232-4232-a586-596b6cc05415");
         public List<RoomListResponse> Rooms;
         public List<CarpetListReponse> Carpets;
+        public decimal TotalLength;
+        public decimal TotalCost;
 
         protected async override Task OnInitializedAsync()
         {
@@ -31,7 +33,15 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
 
         public async Task Refresh()
         {
+            TotalLength = 0;
+            TotalCost = 0;
             Rooms = await RoomService.GetAllRoomsByBuildingIdAsync(BuildingId);
+            foreach (var Room in Rooms)
+            {
+                TotalLength += Room.Length;
+                var Carpet = Carpets.Where(c => c.Id == Room.CarpetId).FirstOrDefault();
+                TotalCost += (((Room.Width * Room.Length) / 9) * Carpet.SquareYardPrice);
+            }
         }
 
         public async Task ShowAddRoomModal(Guid BuildingId)
@@ -44,7 +54,7 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
 
             if (!result.Cancelled) 
             {
-                Refresh();
+                await Refresh();
             }
         }
     }

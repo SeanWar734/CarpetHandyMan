@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -18,9 +19,10 @@ namespace CarpetHandyMan.Blazor.Services
             HttpClient = httpClient;
         }
 
-        public Task AddNewRoomAsync(CreateRoomRequest RoomRequest)
+        public async Task AddNewRoomAsync(CreateRoomRequest RoomRequest)
         {
-            throw new NotImplementedException();
+            var RoomRequestJson = new StringContent(JsonSerializer.Serialize(RoomRequest), Encoding.UTF8, "application/json");
+            await HttpClient.PostAsync($"room", RoomRequestJson);
         }
 
         public Task DeleteRoomAsync(Guid id)

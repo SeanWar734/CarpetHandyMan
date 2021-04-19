@@ -36,6 +36,7 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
                 Width = RoomRequest.Width,
                 RoomName = RoomRequest.RoomName,
                 BuildingId = BuildingId,
+                CarpetId = RoomRequest.CarpetId
             };
 
             await RoomService.AddNewRoomAsync(NewRoom);
