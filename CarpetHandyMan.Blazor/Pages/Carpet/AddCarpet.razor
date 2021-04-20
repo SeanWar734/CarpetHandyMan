@@ -31,10 +31,14 @@
         <InputNumber @bind-Value="Carpet.Width" />
     </div>
     <br />
-    <div class="bg-gray-200 border-2 border-gray-700 rounded-md w-min p-2">
-        <div>Carpet Price</div>
-        <InputNumber @bind-Value="Carpet.SquareYardPrice" />
+
+    <div>
+        <div class="bg-gray-200 border-2 border-gray-700 rounded-md w-min p-2">
+            <div>Carpet Price</div>
+            <InputNumber @bind-Value="Carpet.SquareYardPrice" />
+        </div>
     </div>
 
-    <button type="submit">Add</button>
+
+    <button class="rounded-md border-gray-700 bg-gray-200" type="submit">Add</button>
 </EditForm>

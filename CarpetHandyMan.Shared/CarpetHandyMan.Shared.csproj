@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -10,8 +10,6 @@
     <Folder Include="Installers\" />
     <Folder Include="Orders\" />
     <Folder Include="Retailers\" />
-    <Folder Include="Staircases\" />
-    <Folder Include="Stairs\" />
   </ItemGroup>
 
 </Project>

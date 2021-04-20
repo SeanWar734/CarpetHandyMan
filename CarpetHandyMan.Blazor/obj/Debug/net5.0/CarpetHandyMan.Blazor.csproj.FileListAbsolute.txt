@@ -70,3 +70,5 @@ C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\bin\Debug\n
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\bin\Debug\net5.0\package-lock.json
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\Carpet\AddCarpet.razor.g.cs
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Carpet\AddCarpet.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\Estimate\AddStaircaseModal.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Estimate\AddStaircaseModal.razor.g.cs

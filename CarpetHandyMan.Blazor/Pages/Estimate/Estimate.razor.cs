@@ -22,7 +22,7 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
         public Guid BuildingId = Guid.Parse("bac8fdb0-1232-4232-a586-596b6cc05415");
         public List<RoomListResponse> Rooms;
         public List<CarpetListReponse> Carpets;
-        public decimal TotalLength;
+        public decimal TotalLength = 0;
         public decimal TotalCost;
         public decimal TotalCostHigh;
 
@@ -34,18 +34,15 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
 
         public async Task Refresh()
         {
-            TotalLength = 0;
             TotalCost = 0;
-            Rooms = await RoomService.GetAllRoomsByBuildingIdAsync(BuildingId);
-            
-            foreach (var Room in Rooms)
-            {
-                TotalLength += Room.Length;
-                var Carpet = Carpets.Where(c => c.Id == Room.CarpetId).FirstOrDefault();
-                TotalCost += (((Room.Width * Room.Length) / 9) * Carpet.SquareYardPrice);
-            }
+            TotalCost = 0;
 
-            TotalCostHigh = TotalCost * 1.12m;
+            Rooms = await RoomService.GetAllRoomsByBuildingIdAsync(BuildingId);
+
+            TotalLength += CalculateRoomsLength(Rooms);
+            TotalCost += CalculateRoomsTotal(Rooms);
+
+            TotalCostHigh = TotalCost * 1.1m;
         }
 
         public async Task ShowAddRoomModal(Guid BuildingId)
@@ -60,6 +57,42 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
             {
                 await Refresh();
             }
+        }
+
+        public async Task ShowAddStaircaseModal(Guid BuildingId)
+        {
+            var parameters = new ModalParameters();
+            parameters.Add(nameof(AddStaircaseModal.BuildingId), BuildingId);
+            
+            var StaircaseModal = Modal.Show<AddStaircaseModal>("Add A New Staircase", parameters);
+            var result = await StaircaseModal.Result;
+
+            if (!result.Cancelled)
+            {
+                await Refresh();
+            }
+
+        }
+
+        public decimal CalculateRoomsTotal(List<RoomListResponse> Rooms)
+        {
+
+            foreach (var Room in Rooms)
+            {
+                var Carpet = Carpets.Where(c => c.Id == Room.CarpetId).FirstOrDefault();
+                TotalCost += (((Room.Width * Room.Length) / 9) * Carpet.SquareYardPrice);
+            }
+
+            return TotalCost;
+        }
+
+        public decimal CalculateRoomsLength(List<RoomListResponse> Rooms)
+        {
+            foreach (var Room in Rooms)
+            {
+                TotalLength += Room.Length;
+            }
+            return TotalLength;
         }
     }
 }

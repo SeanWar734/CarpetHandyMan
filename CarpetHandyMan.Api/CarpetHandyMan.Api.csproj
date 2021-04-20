@@ -24,7 +24,6 @@
     <Folder Include="Endpoints\Installers\" />
     <Folder Include="Endpoints\Orders\" />
     <Folder Include="Endpoints\Retailers\" />
-    <Folder Include="Endpoints\Staircases\" />
     <Folder Include="Endpoints\Stairs\" />
   </ItemGroup>
 

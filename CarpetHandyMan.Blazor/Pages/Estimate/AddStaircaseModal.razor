@@ -1,0 +1,54 @@
+﻿@inherits AddStaircaseModalBase
+
+@if (NewStaircase != null)
+{
+    <EditForm Model="NewStaircase" OnValidSubmit="(() => AddNewStaircase(NewStaircase))">
+        <div class="border-2 border-gray-700 bg-gray-200 rounded-md p-2">
+            <div>Stair Count</div>
+            <InputNumber @bind-Value="NewStaircase.StairCount" />
+        </div>
+        <br />
+        <div class="border-2 border-gray-700 bg-gray-200 rounded-md p-2">
+            <div>Length</div>
+            <InputNumber @bind-Value="NewStaircase.StairLength" />
+        </div>
+        <br />
+        <div class="border-2 border-gray-700 bg-gray-200 rounded-md p-2">
+            <div>Height</div>
+            <InputNumber @bind-Value="NewStaircase.StairHeight" />
+        </div>
+        <br />
+        <div class="border-2 border-gray-700 bg-gray-200 rounded-md p-2">
+            <div>Width</div>
+            <InputNumber @bind-Value="NewStaircase.StairWidth" />
+        </div>
+        <br />
+        <div class="border-2 border-gray-700 bg-gray-200 rounded-md p-2">
+            <div>Carpet</div>
+            @if (Carpet != null)
+            {
+                <InputSelect @bind-Value="NewStaircase.CarpetId">
+                    @foreach (var carpet in Carpet)
+                            {
+                        <option value="@carpet.Id">@carpet.Name @carpet.SquareYardPrice.ToString("C")</option>
+                            }
+                </InputSelect>
+            }
+        </div>
+        <br />
+        <div class="border-2 border-gray-700 bg-gray-200 rounded-md p-2">
+            <div>Is It Curved?</div>
+            <InputCheckbox @bind-Value="NewStaircase.IsCurved" />
+        </div>
+        <br />
+        <button type="submit">Add</button>
+    </EditForm>
+}
+else
+{
+    <span>Loading...</span>
+}
+<!--
+        public decimal CarpetPrice { get; set; }
+        public bool IsCurved { get; set; }
+-->
