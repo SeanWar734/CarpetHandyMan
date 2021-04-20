@@ -8,7 +8,7 @@ namespace CarpetHandyMan.Blazor.Interfaces
 {
     public interface IStaircaseService
     {
-        Task<StaircaseListResponse> GetOneStaircaseAsync(Guid id);
+        Task<List<StaircaseListResponse>> GetStaircaseByBuildingIdAsync(Guid id);
         Task AddNewStaircaseAsync(CreateStaircaseRequest staircaseRequest);
         Task DeleteStaircaseAsync(Guid id);
         Task UpdateStaircaseAsync(UpdateStaircaseRequest staircaseRequest);

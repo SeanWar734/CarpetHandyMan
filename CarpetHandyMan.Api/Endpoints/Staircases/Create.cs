@@ -24,31 +24,16 @@ namespace CarpetHandyMan.Api.Endpoints.Staircases
         [HttpPost("/staircase")]
         public override async Task<ActionResult> HandleAsync([FromBody] CreateStaircaseRequest request, CancellationToken cancellationToken = default)
         {
-            if (request.Id != Guid.Empty)
+            var Staircase = new Staircase
             {
-                var Staircase = new Staircase
-                {
-                    Id = request.Id,
-                    BuildingId = request.BuildingId,
-                    CarpetId = request.CarpetId,
-                    IsCurved = request.IsCurved,
-                    StairCount = request.StairCount,
-                    Total = (((request.StairWidth * request.StairLength) + (request.StairWidth * request.StairHeight) * request.CarpetPrice) * request.StairCount)
-                };
-            } 
-            else
-            {
-                var Staircase = new Staircase
-                {
-                    Id = Guid.NewGuid(),
-                    BuildingId = request.BuildingId,
-                    CarpetId = request.CarpetId,
-                    IsCurved = request.IsCurved,
-                    StairCount = request.StairCount,
-                    Total = ((((request.StairWidth * request.StairLength) + (request.StairWidth * request.StairHeight) / 9) * request.CarpetPrice) * request.StairCount)
-                };
-            }
-
+                Id = Guid.NewGuid(),
+                BuildingId = request.BuildingId,
+                CarpetId = request.CarpetId,
+                IsCurved = request.IsCurved,
+                StairCount = request.StairCount,
+                Stairs = new List<Stair>(),
+                Total = request.Total
+            };
             for (int i = 0; i < request.StairCount; i++)
             {
                 Staircase.Stairs.Add(new Stair
@@ -59,10 +44,9 @@ namespace CarpetHandyMan.Api.Endpoints.Staircases
                     Width = request.StairWidth,
                     Length = request.StairLength,
 
-                    Price = (((request.StairLength * request.StairWidth) + (request.StairHeight * request.StairWidth)) * request.CarpetPrice)
+                    Price = (request.Total / request.StairCount)
                 });
             }
-
             await _repo.AddAsync(Staircase);
             await _repo.SaveAsync();
             return Ok(Staircase);

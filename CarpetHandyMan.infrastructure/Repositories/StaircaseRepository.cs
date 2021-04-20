@@ -25,6 +25,7 @@ namespace CarpetHandyMan.infrastructure.Repositories
         public async Task DeleteStaircaseAsync(Guid StaircaseId)
         {
             var staircase = await _context.FindAsync<Staircase>(StaircaseId);
+            _context.RemoveRange(staircase.Stairs);
             _context.Remove(staircase);
         }
 

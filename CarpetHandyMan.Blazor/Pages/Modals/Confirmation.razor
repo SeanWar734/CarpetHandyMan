@@ -1,0 +1,17 @@
+﻿<button class="w-full border-2 border-black text-center py-3 rounded text-black bg-green-200 hover:bg-green-600 focus:outline-none my-1" @onclick="SubmitForm">Yes</button>
+<button class="w-full border-2 border-black text-center py-3 rounded text-black bg-red-200 hover:bg-red-600 focus:outline-none my-1" @onclick="Cancel">Oh Heck No</button>
+@code {
+
+    [CascadingParameter] BlazoredModalInstance ModalInstance { get; set; }
+
+    public void SubmitForm()
+    {
+        ModalInstance.CloseAsync(ModalResult.Ok($"Form was submitted successfully."));
+    }
+
+    public void Cancel()
+    {
+        ModalInstance.CancelAsync();
+    }
+
+}

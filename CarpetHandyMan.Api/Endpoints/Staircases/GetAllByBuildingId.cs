@@ -19,7 +19,7 @@ namespace CarpetHandyMan.Api.Endpoints.Staircases
 
             using var connection = new SqlConnection(@"Server =.\; Integrated Security = True; Database = CarpetHandyManDB");
 
-            var sql = @"SELECT
+            var sql = @"SELECT DISTINCT
                             sc.[Id]
                           , sc.[BuildingId]
                           , sc.[CarpetId]
@@ -30,11 +30,13 @@ namespace CarpetHandyMan.Api.Endpoints.Staircases
                           , s.[Length] as StairLength
                           , s.[Height] as StairHeight
                           , c.[SquareYardPrice] as CarpetPrice
+                          , c.[Width] as CarpetWidth
+	                      , c.[Name] as CarpetName
                       FROM [dbo].[Staircases] sc
+                      JOIN[dbo].[Carpet] c
+                      ON sc.[CarpetId] = c.[Id]                      
                       JOIN [dbo].[Stairs] s
                       ON sc.[Id] = s.[StaircaseId]
-                      JOIN[dbo].[Carpet] c
-                      ON sc.[CarpetId] = c.[Id]
                       WHERE sc.[BuildingId] = @Id;";
             var Carpet = await connection.ExecuteQueryAsync<StaircaseListResponse>(sql, new { Id = id }, cancellationToken: cancellationToken);
             return Ok(Carpet);

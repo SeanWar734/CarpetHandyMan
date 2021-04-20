@@ -25,9 +25,9 @@ namespace CarpetHandyMan.Blazor.Services
             await HttpClient.PostAsync($"room", RoomRequestJson);
         }
 
-        public Task DeleteRoomAsync(Guid id)
+        public async Task DeleteRoomAsync(Guid id)
         {
-            throw new NotImplementedException();
+            await HttpClient.DeleteAsync($"room/{id}");
         }
 
         public Task<List<RoomListResponse>> GetAllRoomsAsync()

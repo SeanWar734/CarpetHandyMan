@@ -5,18 +5,33 @@
 {
     @if (Rooms != null)
     {
-        @if (Rooms.Count != 0)
+        @if (Rooms.Count != 0 || Staircases.Count != 0)
         {
             <div class="border-2 border-black p-2 float-right w-min">
 
                 @foreach (var Room in Rooms)
                 {
                     <div class="border-2 w-min p-2 border-black rounded-md pt">
+                        <button class="float-right text-xl font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200" @onclick="(() => ShowDeleteRoomConfirmationModal(Room.Id))">x</button>
                         <div class="text-xl font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200">@Room.RoomName</div>
                         <div class="text-xl">Length: @Room.Length.ToString("#.##") Feet</div>
                         <div class="text-xl">Width: @Room.Width.ToString("#.##") Feet</div>
                         <div class="text-xl">Carpet: @Room.CarpetName</div>
                     </div>
+                    <br />
+                }
+                @foreach (var Staircase in Staircases)
+                {
+            <div class="border-2 w-min p-2 border-black rounded-md pt">
+                <button class="float-right text-xl font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200" @onclick="(() => ShowDeleteStaircaseConfirmationModal(Staircase.Id))">x</button>
+                <div class="text-xl font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200">Staircase</div>
+                <div class="text-xl">Amount of Stairs: @Staircase.StairCount</div>
+                <div class="text-xl">Height: @Staircase.StairHeight</div>
+                <div class="text-xl">Length: @Staircase.StairLength</div>
+                <div class="text-xl">Width: @Staircase.StairWidth</div>
+                <div class="text-xl">Curved: @Staircase.IsCurved.ToString()</div>
+                <div class="text-xl">Carpet: @Staircase.CarpetName</div>
+            </div>
                     <br />
                 }
                 <div>
@@ -28,7 +43,7 @@
         }
         else
         {
-            <div class="border-2 w-min p-2 border-black rounded-md">Add More Rooms for Estimate</div>
+            <span>Add More Rooms for Estimate</span>
         }
     }
     <div class="p-2">

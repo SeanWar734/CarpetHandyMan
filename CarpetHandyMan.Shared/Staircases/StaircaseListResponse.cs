@@ -13,6 +13,8 @@ namespace CarpetHandyMan.Shared.Staircases
         public Guid BuildingId { get; set; }
         public Guid CarpetId { get; set; }
         public decimal CarpetPrice { get; set; }
+        public decimal CarpetWidth { get; set; }
+        public string CarpetName { get; set; }
         public decimal Total { get; set; }
         public int StairCount { get; set; }
         public bool IsCurved { get; set; }
