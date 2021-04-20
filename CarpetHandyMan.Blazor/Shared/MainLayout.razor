@@ -1,5 +1,5 @@
 ﻿@inherits LayoutComponentBase
-
+@using CarpetHandyMan.Blazor.Components
 <div class="sidebar">
     <NavMenu />
 </div>
@@ -8,4 +8,8 @@
     <div class="content px-4">
         @Body
     </div>
+</div>
+
+<div class="fixed object-right-bottom">
+    <Chat />
 </div>

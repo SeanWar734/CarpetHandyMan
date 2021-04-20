@@ -22,16 +22,16 @@
                 }
                 @foreach (var Staircase in Staircases)
                 {
-            <div class="border-2 w-min p-2 border-black rounded-md pt">
-                <button class="float-right text-xl font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200" @onclick="(() => ShowDeleteStaircaseConfirmationModal(Staircase.Id))">x</button>
-                <div class="text-xl font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200">Staircase</div>
-                <div class="text-xl">Amount of Stairs: @Staircase.StairCount</div>
-                <div class="text-xl">Height: @Staircase.StairHeight</div>
-                <div class="text-xl">Length: @Staircase.StairLength</div>
-                <div class="text-xl">Width: @Staircase.StairWidth</div>
-                <div class="text-xl">Curved: @Staircase.IsCurved.ToString()</div>
-                <div class="text-xl">Carpet: @Staircase.CarpetName</div>
-            </div>
+                    <div class="border-2 w-min p-2 border-black rounded-md pt">
+                        <button class="float-right text-xl font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200" @onclick="(() => ShowDeleteStaircaseConfirmationModal(Staircase.Id))">x</button>
+                        <div class="text-xl font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200">Staircase</div>
+                        <div class="text-xl">Amount of Stairs: @Staircase.StairCount</div>
+                        <div class="text-xl">Height: @Staircase.StairHeight</div>
+                        <div class="text-xl">Length: @Staircase.StairLength</div>
+                        <div class="text-xl">Width: @Staircase.StairWidth</div>
+                        <div class="text-xl">Curved: @Staircase.IsCurved.ToString()</div>
+                        <div class="text-xl">Carpet: @Staircase.CarpetName</div>
+                    </div>
                     <br />
                 }
                 <div>
