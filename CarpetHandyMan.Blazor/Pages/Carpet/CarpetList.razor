@@ -6,15 +6,16 @@
     <div class="float-left">
         @foreach (var Carpet in Carpets)
         {
-            <div class="border-black border-2 w-min rounded-md p-1">
-                <img src="/Images/804DADCB-658F-46A8-9BCB-08D900D67106.jpg" width="300" />
-                <div class="border-black border-2 w-min rounded-md p-1 text-2xl font-extrabold bg-gray-200"><button @onclick="@(() => ShowCarpetModal(Carpet.Id))">@Carpet.Name</button></div>
-                <div class="font-semibold">Brand: @Carpet.Brand</div>
-                <div class="font-semibold">Style: @Carpet.Style</div>
-                <div class="font-semibold">Description: @Carpet.Description</div>
-                <div class="font-semibold">Price: @Carpet.SquareYardPrice.ToString("$#.##")</div>
+            <div class="border-black border-2 w-min rounded-md p-1 flex">
+                <img src="/Images/804DADCB-658F-46A8-9BCB-08D900D67106.jpg" width="200" />
+                <div>
+                    <div class="border-black border-2 w-min rounded-md p-1 text-2xl font-extrabold bg-gray-200"><button @onclick="@(() => ShowCarpetModal(Carpet.Id))">@Carpet.Name</button></div>
+                    <div class="font-semibold">Brand: @Carpet.Brand</div>
+                    <div class="font-semibold">Style: @Carpet.Style</div>
+                    <div class="font-semibold">Description: @Carpet.Description</div>
+                    <div class="font-semibold">Price: @Carpet.SquareYardPrice.ToString("$#.##")</div>
+                </div>
             </div>
-
             <br />
         }
     </div>
