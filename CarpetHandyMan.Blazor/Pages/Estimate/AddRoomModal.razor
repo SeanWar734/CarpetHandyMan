@@ -37,7 +37,7 @@
                             <InputSelect @bind-Value="NewRoom.CarpetId">
                                 @foreach (var carpet in Carpet)
                                         {
-                                    <option value="@carpet.Id">[@carpet.Brand] @carpet.Name $@carpet.SquareYardPrice</option>
+                                    <option value="@carpet.Id">@carpet.Name $@carpet.SquareYardPrice</option>
                                         }
                             </InputSelect>
                         </div>}

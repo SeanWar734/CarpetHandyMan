@@ -30,20 +30,16 @@ namespace CarpetHandyMan.Blazor.Services
             await HttpClient.DeleteAsync($"room/{id}");
         }
 
-        public Task<List<RoomListResponse>> GetAllRoomsAsync()
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<List<RoomListResponse>> GetAllRoomsByBuildingIdAsync(Guid BuildingId)
         {
             var result = await HttpClient.GetStreamAsync($"rooms/building/{BuildingId}");
             return await JsonSerializer.DeserializeAsync<List<RoomListResponse>>(result, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
-        public Task<RoomSingleResponse> GetOneRoomAsync(Guid id)
+        public async Task<RoomSingleResponse> GetOneRoomAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var result = await HttpClient.GetStreamAsync($"room/{id}");
+            return await JsonSerializer.DeserializeAsync<RoomSingleResponse>(result, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
         public Task UpdateRoomAsync(UpdateRoomRequest RoomRequest)

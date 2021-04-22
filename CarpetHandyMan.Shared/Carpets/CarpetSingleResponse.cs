@@ -16,5 +16,6 @@ namespace CarpetHandyMan.Shared.Carpets
         public string Brand { get; set; }
         public string Style { get; set; }
         public string Description { get; set; }
+        public string Image { get; set; }
     }
 }

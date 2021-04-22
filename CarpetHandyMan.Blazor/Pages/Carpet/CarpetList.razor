@@ -7,7 +7,7 @@
         @foreach (var Carpet in Carpets)
         {
             <div class="border-black border-2 w-min rounded-md p-1 flex">
-                <img src="/Images/804DADCB-658F-46A8-9BCB-08D900D67106.jpg" width="200" />
+                <img src="/Images/@Carpet.Image" width="200" />
                 <div>
                     <div class="border-black border-2 w-min rounded-md p-1 text-2xl font-extrabold bg-gray-200"><button @onclick="@(() => ShowCarpetModal(Carpet.Id))">@Carpet.Name</button></div>
                     <div class="font-semibold">Brand: @Carpet.Brand</div>

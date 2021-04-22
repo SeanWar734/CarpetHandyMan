@@ -76,3 +76,7 @@ C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\n
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Modals\Confirmation.razor.g.cs
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\RazorDeclaration\Components\Chat.razor.g.cs
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Components\Chat.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\Estimate\ViewRoomModal.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Estimate\ViewRoomModal.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\Estimate\AddClosetModal.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Estimate\AddClosetModal.razor.g.cs

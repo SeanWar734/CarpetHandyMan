@@ -51,6 +51,9 @@ namespace CarpetHandyMan.Api.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("Length")
                         .HasColumnType("decimal(18,2)");
 
@@ -82,10 +85,19 @@ namespace CarpetHandyMan.Api.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("BuildingId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CarpetId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("CarpetPrice")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<decimal>("Length")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid>("RoomId")
+                    b.Property<Guid?>("RoomId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("RoomId1")
@@ -352,9 +364,7 @@ namespace CarpetHandyMan.Api.Migrations
                 {
                     b.HasOne("CarpetHandyMan.Core.Objects.Room", null)
                         .WithMany()
-                        .HasForeignKey("RoomId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("RoomId");
 
                     b.HasOne("CarpetHandyMan.Core.Objects.Room", null)
                         .WithMany("Closets")

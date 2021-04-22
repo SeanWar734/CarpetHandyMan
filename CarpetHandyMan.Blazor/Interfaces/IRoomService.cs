@@ -8,7 +8,6 @@ namespace CarpetHandyMan.Blazor.Interfaces
 {
     public interface IRoomService
     {
-        Task<List<RoomListResponse>> GetAllRoomsAsync();
         Task<List<RoomListResponse>> GetAllRoomsByBuildingIdAsync(Guid BuildingId);
         Task<RoomSingleResponse> GetOneRoomAsync(Guid id);
         Task AddNewRoomAsync(CreateRoomRequest RoomRequest);

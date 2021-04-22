@@ -22,6 +22,9 @@ namespace CarpetHandyMan.Api.Endpoints.Closets
             var sql = @"SELECT 
                            c.[Id]
                           ,c.[RoomId]
+                          ,c.[CarpetId]
+                          ,c.[BuildingId]
+                          ,c.[CarpetPrice]
                           ,c.[Width]
                           ,c.[Length]
                       FROM [dbo].[Closets] c

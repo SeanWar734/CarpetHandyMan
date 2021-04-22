@@ -3,6 +3,7 @@ using Blazored.Modal.Services;
 using CarpetHandyMan.Blazor.Interfaces;
 using CarpetHandyMan.Blazor.Pages.Modals;
 using CarpetHandyMan.Shared.Carpets;
+using CarpetHandyMan.Shared.Closets;
 using CarpetHandyMan.Shared.Rooms;
 using CarpetHandyMan.Shared.Staircases;
 using Microsoft.AspNetCore.Components;
@@ -16,9 +17,9 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
     public class EstimateBase : ComponentBase
     {
         [Inject] ICarpetService CarpetService { get; set; }
+        [Inject] IClosetService ClosetService { get; set; }
         [Inject] IRoomService RoomService { get; set; }
         [Inject] IStaircaseService StaircaseService { get; set; }
-        [Inject] NavigationManager NavManager { get; set; }
 
         [CascadingParameter] public IModalService Modal { get; set; }
 
@@ -26,6 +27,7 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
         public List<RoomListResponse> Rooms;
         public List<StaircaseListResponse> Staircases;
         public List<CarpetListReponse> Carpets;
+        public List<ClosetListResponse> Closets;
         public decimal TotalLength = 0;
         public decimal TotalCost;
         public decimal TotalCostHigh;
@@ -40,9 +42,15 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
         {
             TotalCost = 0;
             TotalCost = 0;
-
+           
+            Closets = await ClosetService.GetAllClosetByBuildingIdAsync(BuildingId);
             Staircases = await StaircaseService.GetStaircaseByBuildingIdAsync(BuildingId);
             Rooms = await RoomService.GetAllRoomsByBuildingIdAsync(BuildingId);
+
+            foreach (var Room in Rooms)
+            {
+                Room.ClosetCount = Closets.Where(c => c.RoomId == Room.Id).ToList().Count();
+            }
 
             TotalLength += CalculateRoomsLength(Rooms);
             TotalCost += CalculateRoomsTotal(Rooms);
@@ -79,6 +87,30 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
                 await Refresh();
             }
 
+        }
+
+        public async Task ShowAddClosetModal(Guid BuildingId, Guid RoomId)
+        {
+            var parameters = new ModalParameters();
+            parameters.Add(nameof(AddClosetModal.BuildingId), BuildingId);
+            parameters.Add(nameof(AddClosetModal.RoomId), RoomId);
+
+            var StaircaseModal = Modal.Show<AddClosetModal>("Add A New Closet", parameters);
+            var result = await StaircaseModal.Result;
+
+            if (!result.Cancelled)
+            {
+                await Refresh();
+            }
+
+        }
+
+        public async Task ShowViewRoom(Guid RoomId)
+        {
+            var parameters = new ModalParameters();
+            parameters.Add(nameof(ViewRoomModalBase.RoomId), RoomId);
+
+            var ViewRoomModal = Modal.Show<ViewRoomModal>("", parameters);
         }
 
         public decimal CalculateRoomsTotal(List<RoomListResponse> Rooms)

@@ -1,13 +1,13 @@
 ﻿@if (IsVisable)
 {
-    <div class="border-2 border-gray-500 rounded-t-md w-48 h-48 mr-20">
+    <div class="border-2 border-gray-500 rounded-t-md w-48 h-48 mr-2">
         <div class="">Chat</div>
     </div>
-    <div class="border-l-2 border-b-2 w-40 rounded-bl-md h-8 border-gray-500">
+    <div class="border-l-2 border-b-2 w-40 rounded-bl-md h-8 border-gray-500 mb-2">
         <div class="flex">
             <div class="w-32">
                 <EditForm Model="NewMessage">
-                    <InputText style="width: 150px" @bind-Value="NewMessage.Text" />
+                    <InputText style="width: 150px" placeholder="Enter Message" @bind-Value="NewMessage.Text" />
                 </EditForm>
             </div>
             <button class="h-8 ml-3 px-1 w-12 border-b-2 border-r-2 rounded-br-md border-gray-500 border-l-2">Send</button>

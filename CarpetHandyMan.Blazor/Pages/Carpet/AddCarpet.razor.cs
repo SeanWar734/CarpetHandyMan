@@ -13,7 +13,6 @@ namespace CarpetHandyMan.Blazor.Pages.Carpet
     public class AddCarpetBase : ComponentBase
     {
         [Inject] ICarpetService CarpetService { get; set; }
-        [Inject] NavigationManager NavManager { get; set; }
 
         [CascadingParameter] BlazoredModalInstance ModalInstance { get; set; }
 

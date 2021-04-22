@@ -28,6 +28,7 @@ namespace CarpetHandyMan.Api.Endpoints.Carpets
                           ,c.[Brand]
                           ,c.[Style]
                           ,c.[Description]
+                          ,c.[Image]
                       FROM [dbo].[Carpet] c
                       ORDER BY c.[Brand];";
             var Carpet = await connection.ExecuteQueryAsync<CarpetListReponse>(sql, cancellationToken: cancellationToken);

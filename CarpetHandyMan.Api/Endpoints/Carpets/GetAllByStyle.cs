@@ -27,6 +27,7 @@ namespace CarpetHandyMan.Api.Endpoints.Carpets
                           ,c.[Brand]
                           ,c.[Style]
                           ,c.[Description]
+                          ,c.[Image]
                       FROM [dbo].[Carpet] c
                       WHERE c.[Style] = @Style
                       ORDER BY c.[Name];";

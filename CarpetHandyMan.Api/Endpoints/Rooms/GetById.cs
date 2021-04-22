@@ -24,6 +24,7 @@ namespace CarpetHandyMan.Api.Endpoints.Rooms
                           ,r.[BuildingId]
                           ,r.[CarpetId]
                           ,c.[Name] AS CarpetName
+                          ,c.[Width] AS CarpetWidth
                           ,r.[RoomName]
                           ,r.[Width]
                           ,r.[Length]

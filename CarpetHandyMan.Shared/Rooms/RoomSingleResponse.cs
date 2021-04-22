@@ -11,6 +11,9 @@ namespace CarpetHandyMan.Shared.Rooms
         public Guid Id { get; set; }
         public Guid BuildingId { get; set; }
         public Guid CarpetId { get; set; }
+        public int ClosetCount { get; set; }
+        public string CarpetName { get; set; }
+        public decimal CarpetWidth { get; set; }
         public string RoomName { get; set; }
         public decimal Width { get; set; }
         public decimal Length { get; set; }
