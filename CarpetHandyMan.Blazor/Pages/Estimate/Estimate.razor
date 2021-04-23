@@ -39,11 +39,12 @@
                     </div>
                     <br />
                 }
-                <div>
-                    <div class="font-semibold">Total Length: @TotalLength.ToString("#.##") Feet</div>
-                    <div class="text-xl font-bold">Estimate Low Cost: @TotalCost.ToString("C")</div>
-                    <div class="text-xl font-bold">Estimate High Cost: @TotalCostHigh.ToString("C")</div>
-                </div>
+            <div>
+                <div class="font-semibold">Minimum Length: @TotalLength.ToString("#.##") Feet</div>
+                <div class="font-semibold">Estimated Length: @TotalLengthHigh.ToString("#.##") Feet</div>
+                <div class="text-xl font-bold">Minimum Cost: @TotalCost.ToString("C")</div>
+                <div class="text-xl font-bold">Estimated Cost: @TotalCostHigh.ToString("C")</div>
+            </div>
             </div>
         }
         else

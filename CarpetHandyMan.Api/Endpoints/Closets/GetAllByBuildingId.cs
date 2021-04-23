@@ -20,15 +20,18 @@ namespace CarpetHandyMan.Api.Endpoints.Closets
             using var connection = new SqlConnection(@"Server =.\; Integrated Security = True; Database = CarpetHandyManDB");
 
             var sql = @"SELECT 
-                           c.[Id]
-                          ,c.[RoomId]
-                          ,c.[BuildingId]
-                          ,c.[CarpetId]
-                          ,c.[CarpetPrice]
-                          ,c.[Width]
-                          ,c.[Length]
-                      FROM [dbo].[Closets] c
-                      WHERE c.[BuildingId] = @Id;";
+                           cl.[Id]
+                          ,cl.[RoomId]
+                          ,cl.[CarpetId]
+                          ,cl.[BuildingId]
+                          ,cl.[CarpetPrice]
+                          ,c.[Width] as CarpetWidth
+                          ,cl.[Width]
+                          ,cl.[Length]
+                      FROM [dbo].[Closets] cl
+                      JOIN [dbo].[Carpet] c
+                      ON cl.[CarpetId] = c.[Id]
+                      WHERE cl.[BuildingId] = @Id;";
             var Carpet = await connection.ExecuteQueryAsync<ClosetListResponse>(sql, new { Id = id }, cancellationToken: cancellationToken);
             return Ok(Carpet);
         }

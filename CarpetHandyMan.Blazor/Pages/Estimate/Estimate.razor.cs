@@ -24,13 +24,14 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
         [CascadingParameter] public IModalService Modal { get; set; }
 
         public Guid BuildingId = Guid.Parse("bac8fdb0-1232-4232-a586-596b6cc05415");
-        public List<RoomListResponse> Rooms;
-        public List<StaircaseListResponse> Staircases;
         public List<CarpetListReponse> Carpets;
         public List<ClosetListResponse> Closets;
-        public decimal TotalLength = 0;
+        public List<RoomListResponse> Rooms;
+        public List<StaircaseListResponse> Staircases;
         public decimal TotalCost;
         public decimal TotalCostHigh;
+        public decimal TotalLength;
+        public decimal TotalLengthHigh;
 
         protected async override Task OnInitializedAsync()
         {
@@ -42,7 +43,7 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
         {
             TotalCost = 0;
             TotalLength = 0;
-           
+
             Closets = await ClosetService.GetAllClosetByBuildingIdAsync(BuildingId);
             Staircases = await StaircaseService.GetStaircaseByBuildingIdAsync(BuildingId);
             Rooms = await RoomService.GetAllRoomsByBuildingIdAsync(BuildingId);
@@ -59,6 +60,7 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
             TotalLength += CalculateClosetsLength(Closets);
             TotalCost += CalculateClosetsTotal(Closets);
 
+            TotalLengthHigh = TotalLength * 1.1m;
             TotalCostHigh = TotalCost * 1.1m;
         }
 
@@ -70,7 +72,7 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
             var CarpetModal = Modal.Show<AddRoomModal>("Add A New Room", parameters);
             var result = await CarpetModal.Result;
 
-            if (!result.Cancelled) 
+            if (!result.Cancelled)
             {
                 await Refresh();
             }
@@ -80,7 +82,7 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
         {
             var parameters = new ModalParameters();
             parameters.Add(nameof(AddStaircaseModal.BuildingId), BuildingId);
-            
+
             var StaircaseModal = Modal.Show<AddStaircaseModal>("Add A New Staircase", parameters);
             var result = await StaircaseModal.Result;
 
@@ -172,11 +174,28 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
 
         public decimal CalculateClosetsLength(List<ClosetListResponse> Closets)
         {
-            foreach (var closet in Closets)
+            var TempLength = 0m;
+            var TempClosets = Closets;
+            TempClosets.OrderBy(tc => tc.Length);
+
+            for (int i = 0; i < (TempClosets.Count() - 1); i++)
             {
-                TotalLength += closet.Length;
+                if (TempClosets[i].Width + TempClosets[i + 1].Width <= TempClosets[i].CarpetWidth)
+                {
+                    if (TempClosets[i].Length > TempClosets[i + 1].Length)
+                    {
+                        TempLength += TempClosets[i].Length;
+                    }
+                    else
+                    {
+                        TempLength += TempClosets[i + 1].Length;
+                    }
+                }
             }
-            return TotalLength;
+
+            return TempLength;
+
+            //return Closets.Sum(c => c.Length);
         }
 
         public async Task ShowDeleteRoomConfirmationModal(Guid id)

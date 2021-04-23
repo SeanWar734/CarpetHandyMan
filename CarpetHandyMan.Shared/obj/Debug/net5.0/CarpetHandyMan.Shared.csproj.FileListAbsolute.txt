@@ -9,4 +9,3 @@ C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Shared\obj\Debug\n
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Shared\obj\Debug\net5.0\CarpetHandyMan.Shared.dll
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Shared\obj\Debug\net5.0\ref\CarpetHandyMan.Shared.dll
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Shared\obj\Debug\net5.0\CarpetHandyMan.Shared.pdb
-C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Shared\obj\Debug\net5.0\CarpetHandyMan.Shared.csprojAssemblyReference.cache

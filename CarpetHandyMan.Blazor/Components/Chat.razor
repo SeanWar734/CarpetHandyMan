@@ -1,23 +1,26 @@
 ﻿@if (IsVisable)
 {
-    <div class="border-2 border-gray-500 rounded-t-md w-48 h-48 mr-2">
-        <div class="">Chat</div>
+    <div class="border-2 bg-white border-gray-500 rounded-t-md w-48 h-48 mr-2">
+        @foreach (var Message in Messages)
+        {
+            <div class="">@Message.Text</div>
+        }
     </div>
-    <div class="border-l-2 border-b-2 w-40 rounded-bl-md h-8 border-gray-500 mb-2">
+    <div class="border-l-2 bg-white border-b-2 w-40 rounded-bl-md h-8 border-gray-500 mb-2">
         <div class="flex">
             <div class="w-32">
-                <EditForm Model="NewMessage">
+                <EditForm Model="NewMessage" OnValidSubmit="(() => AddMessage(NewMessage))">
                     <InputText style="width: 150px" placeholder="Enter Message" @bind-Value="NewMessage.Text" />
+                    <button type="submit" class="h-8 ml-3 px-1 w-12 bg-white border-b-2 border-r-2 rounded-br-md border-gray-500 border-l-2">Send</button>
                 </EditForm>
             </div>
-            <button class="h-8 ml-3 px-1 w-12 border-b-2 border-r-2 rounded-br-md border-gray-500 border-l-2">Send</button>
         </div>
     </div>
 }
 <div class="flex float-right">
     @if (!IsOpened)
     {
-        <div class="border-2 border-gray-500 rounded-md h-12 p-2">Hi, Would you like some help today?</div>
+        <div class="border-2 bg-white border-gray-500 rounded-md h-12 p-2">Hi, Would you like some help today?</div>
     }
     <button class="outline-none w-24 h-24 rounded-full border-gray-700 bg-gray-200 border-2 float-right" @onclick="ToggleVisable">Chat</button>
 </div>
@@ -26,11 +29,22 @@
     public bool IsVisable = false;
     public bool IsOpened = false;
     public Message NewMessage = new Message();
+    public List<Message> Messages = new List<Message>();
 
     public void ToggleVisable()
     {
         IsOpened = true;
         IsVisable = !IsVisable;
+    }
+
+    protected async override Task OnInitializedAsync()
+    {
+        Messages.Add(new Message { Text = "Hello" });
+    }
+
+    public void AddMessage(Message message)
+    {
+        Messages.Add(message);
     }
 
     public class Message
