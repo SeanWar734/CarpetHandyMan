@@ -40,5 +40,11 @@ namespace CarpetHandyMan.Blazor.Services
             var result = await HttpClient.GetStreamAsync($"staircases/building/{id}");
             return await JsonSerializer.DeserializeAsync<List<StaircaseListResponse>>(result, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
+
+        public async Task<StaircaseListResponse> GetStaircaseById(Guid id)
+        {
+            var result = await HttpClient.GetStreamAsync($"staircase/{id}");
+            return await JsonSerializer.DeserializeAsync<StaircaseListResponse>(result, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
     }
 }

@@ -41,7 +41,7 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
         public async Task Refresh()
         {
             TotalCost = 0;
-            TotalCost = 0;
+            TotalLength = 0;
            
             Closets = await ClosetService.GetAllClosetByBuildingIdAsync(BuildingId);
             Staircases = await StaircaseService.GetStaircaseByBuildingIdAsync(BuildingId);
@@ -56,6 +56,8 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
             TotalCost += CalculateRoomsTotal(Rooms);
             TotalLength += CalculateStarcasesLength(Staircases);
             TotalCost += CalculateStaircasesTotal(Staircases);
+            TotalLength += CalculateClosetsLength(Closets);
+            TotalCost += CalculateClosetsTotal(Closets);
 
             TotalCostHigh = TotalCost * 1.1m;
         }
@@ -105,12 +107,20 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
 
         }
 
-        public async Task ShowViewRoom(Guid RoomId)
+        public void ShowViewRoom(Guid RoomId)
         {
             var parameters = new ModalParameters();
             parameters.Add(nameof(ViewRoomModalBase.RoomId), RoomId);
 
             var ViewRoomModal = Modal.Show<ViewRoomModal>("", parameters);
+        }
+
+        public void ShowViewStaircase(Guid StaircaseId)
+        {
+            var parameters = new ModalParameters();
+            parameters.Add(nameof(ViewStaircaseModalBase.StaircaseId), StaircaseId);
+
+            var ViewStaircaseModal = Modal.Show<ViewStaircaseModal>("", parameters);
         }
 
         public decimal CalculateRoomsTotal(List<RoomListResponse> Rooms)
@@ -137,13 +147,7 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
 
         public decimal CalculateStaircasesTotal(List<StaircaseListResponse> Staircases)
         {
-
-            foreach (var Staircase in Staircases)
-            {
-                TotalCost += Staircase.Total;
-            }
-
-            return TotalCost;
+            return Staircases.Sum(x => x.Total);
         }
 
         public decimal CalculateStarcasesLength(List<StaircaseListResponse> Staircases)
@@ -152,6 +156,25 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
             {
                 var StaircaseArea = (((Staircase.StairHeight / 12) * (Staircase.StairWidth / 12)) + ((Staircase.StairLength / 12) * (Staircase.StairWidth / 12))) * Staircase.StairCount;
                 TotalLength = StaircaseArea / Staircase.CarpetWidth;
+            }
+            return TotalLength;
+        }
+
+        public decimal CalculateClosetsTotal(List<ClosetListResponse> Closets)
+        {
+            foreach (var closet in Closets)
+            {
+                var ClosetPrice = ((closet.Width * closet.Length) / 9) * closet.CarpetPrice;
+                TotalCost += ClosetPrice;
+            }
+            return TotalCost;
+        }
+
+        public decimal CalculateClosetsLength(List<ClosetListResponse> Closets)
+        {
+            foreach (var closet in Closets)
+            {
+                TotalLength += closet.Length;
             }
             return TotalLength;
         }

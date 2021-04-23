@@ -11,17 +11,17 @@
 
                 @foreach (var Room in Rooms)
                 {
-                <div class="border-2 w-min p-2 border-black rounded-md pt">
-                    <button class="float-right text-xl font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200" @onclick="(() => ShowDeleteRoomConfirmationModal(Room.Id))">x</button>
-                    <div class="text-xl font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200">@Room.RoomName</div>
-                    <div class="text-xl">Length: @Room.Length.ToString("#.##") Feet</div>
-                    <div class="text-xl">Width: @Room.Width.ToString("#.##") Feet</div>
-                    <div class="text-xl">Carpet: @Room.CarpetName</div>
-                    <div class="text-xl">Closets: @Room.ClosetCount</div>
-                    <button class="text font-bold border-2 border-gray-700 p-1 rounded-md bg-gray-200" @onclick="(() => ShowViewRoom(Room.Id))">View</button>
-                    <button class="text font-bold border-2 border-gray-700 p-1 rounded-md bg-gray-200" @onclick="(() => ShowAddClosetModal(BuildingId, Room.Id))">Add New Closet</button>
+                    <div class="border-2 w-min p-2 border-black rounded-md pt">
+                        <button class="float-right text-xl font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200" @onclick="(() => ShowDeleteRoomConfirmationModal(Room.Id))">x</button>
+                        <div class="text-xl font-bold border-2 border-gray-500 p-1 rounded-md bg-gray-200">@Room.RoomName</div>
+                        <div class="text-xl">Length: @Room.Length.ToString("#.##") Feet</div>
+                        <div class="text-xl">Width: @Room.Width.ToString("#.##") Feet</div>
+                        <div class="text-xl">Carpet: @Room.CarpetName</div>
+                        <div class="text-xl">Closets: @Room.ClosetCount</div>
+                        <button class="text font-bold border-2 border-gray-700 p-1 rounded-md bg-gray-200" @onclick="(() => ShowViewRoom(Room.Id))">View</button>
+                        <button class="text font-bold border-2 border-gray-700 p-1 rounded-md bg-gray-200" @onclick="(() => ShowAddClosetModal(BuildingId, Room.Id))">Add New Closet</button>
 
-                </div>
+                    </div>
                     <br />
                 }
                 @foreach (var Staircase in Staircases)
@@ -35,6 +35,7 @@
                         <div class="text-xl">Width: @Staircase.StairWidth</div>
                         <div class="text-xl">Curved: @Staircase.IsCurved.ToString()</div>
                         <div class="text-xl">Carpet: @Staircase.CarpetName</div>
+                        <button class="text font-bold border-2 border-gray-700 p-1 rounded-md bg-gray-200" @onclick="(() => ShowViewStaircase(Staircase.Id))">View</button>
                     </div>
                     <br />
                 }
@@ -50,10 +51,10 @@
             <span>Add More Rooms for Estimate</span>
         }
     }
-<div class="p-2">
-    <button class="text font-bold border-2 border-gray-700 p-1 rounded-md bg-gray-200" @onclick="(() => ShowAddRoomModal(BuildingId))">Add New Room</button>
-    <button class="text font-bold border-2 border-gray-700 p-1 rounded-md bg-gray-200" @onclick="(() => ShowAddStaircaseModal(BuildingId))">Add New Staircase</button>
-</div>
+    <div class="p-2">
+        <button class="text font-bold border-2 border-gray-700 p-1 rounded-md bg-gray-200" @onclick="(() => ShowAddRoomModal(BuildingId))">Add New Room</button>
+        <button class="text font-bold border-2 border-gray-700 p-1 rounded-md bg-gray-200" @onclick="(() => ShowAddStaircaseModal(BuildingId))">Add New Staircase</button>
+    </div>
 }
 else
 {
