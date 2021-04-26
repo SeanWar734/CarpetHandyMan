@@ -10,8 +10,10 @@
         <div class="flex">
             <div class="w-32">
                 <EditForm Model="NewMessage" OnValidSubmit="(() => AddMessage(NewMessage))">
-                    <InputText style="width: 150px" placeholder="Enter Message" @bind-Value="NewMessage.Text" />
-                    <button type="submit" class="h-8 ml-3 px-1 w-12 bg-white border-b-2 border-r-2 rounded-br-md border-gray-500 border-l-2">Send</button>
+                    <div class="flex">
+                        <InputText style="width: 150px" placeholder="Enter Message" @bind-Value="NewMessage.Text" />
+                        <button type="submit" class="h-9 px-1 w-12 bg-white border-b-2 border-r-2 rounded-br-md border-gray-500 border-l-2">Send</button>
+                    </div>
                 </EditForm>
             </div>
         </div>
@@ -44,7 +46,9 @@
 
     public void AddMessage(Message message)
     {
-        Messages.Add(message);
+        var newMessage = new Message();
+        newMessage = message;
+        Messages.Add(newMessage);
     }
 
     public class Message

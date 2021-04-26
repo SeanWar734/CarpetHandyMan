@@ -20,7 +20,7 @@ namespace CarpetHandyMan.Api.Endpoints.Carpets
             _repo = repo;
         }
 
-        [HttpPut("/carpet/{id}")]
+        [HttpPut("/carpet")]
         public override async Task<ActionResult> HandleAsync([FromBody] UpdateCarpetRequest request, CancellationToken cancellationToken = default)
         {
 

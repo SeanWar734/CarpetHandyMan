@@ -1,0 +1,18 @@
+﻿@page "/retailers" 
+@inherits RetailerListBase
+
+@if (Retailers != null)
+{
+    <br />
+    foreach (var Retailer in Retailers)
+    {
+        <div class="border-gray-700 bg-gray-200 rounded-md w-auto p-2 border-2">
+            <div>@Retailer.CompanyName</div>
+            <div>@Retailer.Description</div>
+            <div>@Retailer.PhoneNumber</div>
+            <div>@Retailer.Address</div>
+            <div>@Retailer.City</div>
+            <div>@Retailer.State</div>
+        </div>
+    }
+}

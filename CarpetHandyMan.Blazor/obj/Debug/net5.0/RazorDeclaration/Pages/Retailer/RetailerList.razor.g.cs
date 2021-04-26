@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace CarpetHandyMan.Blazor.Components
+namespace CarpetHandyMan.Blazor.Pages.Retailer
 {
     #line hidden
     using System;
@@ -89,48 +89,14 @@ using Blazored.Modal.Services;
 #line default
 #line hidden
 #nullable disable
-    public partial class Chat : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/retailers")]
+    public partial class RetailerList : RetailerListBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
         {
         }
         #pragma warning restore 1998
-#nullable restore
-#line 30 "C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\Components\Chat.razor"
-       
-    public bool IsVisable = false;
-    public bool IsOpened = false;
-    public Message NewMessage = new Message();
-    public List<Message> Messages = new List<Message>();
-
-    public void ToggleVisable()
-    {
-        IsOpened = true;
-        IsVisable = !IsVisable;
-    }
-
-    protected async override Task OnInitializedAsync()
-    {
-        Messages.Add(new Message { Text = "Hello" });
-    }
-
-    public void AddMessage(Message message)
-    {
-        var newMessage = new Message();
-        newMessage = message;
-        Messages.Add(newMessage);
-    }
-
-    public class Message
-    {
-        public string Text { get; set; }
-    }
-
-
-#line default
-#line hidden
-#nullable disable
     }
 }
 #pragma warning restore 1591
