@@ -110,16 +110,17 @@ using Blazored.Modal.Services;
         IsVisable = !IsVisable;
     }
 
-    protected async override Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         Messages.Add(new Message { Text = "Hello" });
     }
 
+ 
     public void AddMessage(Message message)
     {
-        var newMessage = new Message();
-        newMessage = message;
-        Messages.Add(newMessage);
+        
+        Messages.Add(message);
+        NewMessage = new Message();
     }
 
     public class Message

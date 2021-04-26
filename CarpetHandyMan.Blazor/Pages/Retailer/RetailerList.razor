@@ -1,18 +1,19 @@
-﻿@page "/retailers" 
+﻿@page "/retailers"
 @inherits RetailerListBase
 
 @if (Retailers != null)
 {
-    <br />
-    foreach (var Retailer in Retailers)
-    {
-        <div class="border-gray-700 bg-gray-200 rounded-md w-auto p-2 border-2">
-            <div>@Retailer.CompanyName</div>
-            <div>@Retailer.Description</div>
-            <div>@Retailer.PhoneNumber</div>
-            <div>@Retailer.Address</div>
-            <div>@Retailer.City</div>
-            <div>@Retailer.State</div>
+    <div class="flex flex-wrap m-1">
+        @foreach (var Retailer in Retailers)
+        {
+        <div class="border-gray-700 bg-gray-200 rounded-md w-1/4 p-2 border-2 m-1">
+            <div class="text-xl border-2 border-black rounded-md bg-white font-bold">@Retailer.CompanyName</div>
+            <div class="text-lg border-2 border-black rounded-md bg-white font-semibold">@Retailer.Description</div>
+            <div class="text-sm border-2 border-black rounded-md bg-white">@Retailer.PhoneNumber</div>
+            <div class="text-sm border-2 border-black rounded-md bg-white">@Retailer.Address</div>
+            <div class="text-sm border-2 border-black rounded-md bg-white">@Retailer.City</div>
+            <div class="text-sm border-2 border-black rounded-md bg-white">@Retailer.State</div>
         </div>
-    }
+        }
+    </div>
 }
