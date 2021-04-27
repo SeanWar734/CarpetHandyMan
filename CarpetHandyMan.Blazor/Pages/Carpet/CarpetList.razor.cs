@@ -26,6 +26,7 @@ namespace CarpetHandyMan.Blazor.Pages.Carpet
         public async Task Refresh()
         {
             Carpets = await CarpetService.GetAllCarpetAsync();
+            Carpets = Carpets.OrderBy(c => c.Brand).ThenBy(c => c.Name).ToList();
         }
 
         public void ShowCarpetModal(Guid CarpetId)

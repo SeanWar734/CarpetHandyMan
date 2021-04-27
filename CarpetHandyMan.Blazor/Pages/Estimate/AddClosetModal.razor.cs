@@ -26,6 +26,7 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
         {
             Closet = new CreateClosetRequest();
             Carpet = await CarpetService.GetAllCarpetAsync();
+            Carpet = Carpet.OrderBy(c => c.Brand).ThenBy(c => c.Name).ToList();
         }
         public async Task AddNewCloset(CreateClosetRequest ClosetRequest)
         {

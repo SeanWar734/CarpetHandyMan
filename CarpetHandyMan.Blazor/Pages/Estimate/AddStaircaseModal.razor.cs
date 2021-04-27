@@ -25,6 +25,7 @@ namespace CarpetHandyMan.Blazor.Pages.Estimate
         {
             NewStaircase = new CreateStaircaseRequest();
             Carpet = await CarpetService.GetAllCarpetAsync();
+            Carpet = Carpet.OrderBy(c => c.Brand).ThenBy(c => c.Name).ToList();
         }
 
         public decimal CalculateTotal(CreateStaircaseRequest Staircase)

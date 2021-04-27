@@ -30,6 +30,7 @@
                 <InputSelect @bind-Value="NewStaircase.CarpetId">
                     @foreach (var carpet in Carpet)
                             {
+                        <img width="25" src="/Images/@carpet.Image" />
                         <option value="@carpet.Id">@carpet.Name @carpet.SquareYardPrice.ToString("C")</option>
                             }
                 </InputSelect>
