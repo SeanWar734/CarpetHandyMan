@@ -30,9 +30,10 @@ namespace CarpetHandyMan.Blazor.Services
             await HttpClient.DeleteAsync($"staircase/{id}");
         }
 
-        public Task UpdateStaircaseAsync(UpdateStaircaseRequest staircaseRequest)
+        public async Task UpdateStaircaseAsync(UpdateStaircaseRequest staircaseRequest)
         {
-            throw new NotImplementedException();
+            var StaircaseRequestJson = new StringContent(JsonSerializer.Serialize(staircaseRequest), Encoding.UTF8, "application/json");
+            await HttpClient.PutAsync($"staircase", StaircaseRequestJson);
         }
 
         public async Task<List<StaircaseListResponse>> GetStaircaseByBuildingIdAsync(Guid id)

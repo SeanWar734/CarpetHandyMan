@@ -34,6 +34,7 @@ namespace CarpetHandyMan.Blazor
             services.AddHttpClient<IStaircaseService, StaircaseService>(client => client.BaseAddress = new Uri("https://localhost:44311/"));
             services.AddHttpClient<IClosetService, ClosetService>(client => client.BaseAddress = new Uri("https://localhost:44311/"));
             services.AddHttpClient<IRetailerService, RetailerService>(client => client.BaseAddress = new Uri("https://localhost:44311/"));
+            services.AddHttpClient<IInstallerService, InstallerService>(client => client.BaseAddress = new Uri("https://localhost:44311/"));
 
             services.AddBlazoredModal();
             services.AddRazorPages();
@@ -43,6 +44,7 @@ namespace CarpetHandyMan.Blazor
             services.AddSingleton<CarpetService>();
             services.AddSingleton<RoomService>();
             services.AddSingleton<StaircaseService>();
+            services.AddSingleton<InstallerService>();
             services.AddSingleton<ClosetService>();
             services.AddSingleton<RetailerService>();
         }

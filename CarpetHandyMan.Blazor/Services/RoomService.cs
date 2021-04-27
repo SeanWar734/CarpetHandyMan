@@ -42,9 +42,10 @@ namespace CarpetHandyMan.Blazor.Services
             return await JsonSerializer.DeserializeAsync<RoomSingleResponse>(result, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
-        public Task UpdateRoomAsync(UpdateRoomRequest RoomRequest)
+        public async Task UpdateRoomAsync(UpdateRoomRequest RoomRequest)
         {
-            throw new NotImplementedException();
+            var RoomRequestJson = new StringContent(JsonSerializer.Serialize(RoomRequest), Encoding.UTF8, "application/json");
+            await HttpClient.PutAsync($"room", RoomRequestJson);
         }
     }
 }

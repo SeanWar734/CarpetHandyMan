@@ -21,7 +21,6 @@
   <ItemGroup>
     <Folder Include="Endpoints\Buildings\" />
     <Folder Include="Endpoints\Customers\" />
-    <Folder Include="Endpoints\Installers\" />
     <Folder Include="Endpoints\Orders\" />
     <Folder Include="Endpoints\Stairs\" />
   </ItemGroup>
