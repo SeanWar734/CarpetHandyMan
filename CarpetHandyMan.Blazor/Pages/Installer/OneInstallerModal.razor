@@ -1,0 +1,15 @@
+﻿@inherits OneInstallerModalBase
+
+@if (Installer != null)
+{
+    <div class="border-2 bg-gray-200 border-gray-700 p-2 m-1">
+        <div class="mb-1 rounded-md border-2 border-gray-700 bg-white text-3xl font-bold">@Installer.FirstName @Installer.LastName</div>
+        <div class="mb-1 border-2 border-gray-700 bg-white text-2xl font-semibold">Phone Number: @Installer.PhoneNumber</div>
+        <div class="mb-1 border-2 border-gray-700 bg-white">Price per Yard: @Installer.SquareYardPrice.ToString("C")</div>
+        <div class="mb-1 border-2 border-gray-700 bg-white">Area Installed: @Installer.Area</div>
+    </div>
+}
+else
+{
+    <span>Loading...</span>
+}

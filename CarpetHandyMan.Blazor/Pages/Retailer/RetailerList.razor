@@ -12,7 +12,8 @@
             <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.PhoneNumber</div>
             <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.Address</div>
             <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.City</div>
-            <div class="p-2 text-sm border-2 border-black rounded-md bg-white">@Retailer.State</div>
+            <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.State</div>
+            <div class="p-2 mb-1 border-2 border-black rounded-md bg-gray-200 text-center"><button class="text-lg font-bold" @onclick="(() => ShowInstallerListAsync(Retailer.Id))">View Installers</button></div>
         </div>
         }
     </div>

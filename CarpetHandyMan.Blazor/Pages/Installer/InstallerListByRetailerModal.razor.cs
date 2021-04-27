@@ -1,7 +1,7 @@
 ﻿using Blazored.Modal;
 using Blazored.Modal.Services;
 using CarpetHandyMan.Blazor.Interfaces;
-using CarpetHandyMan.Blazor.Pages.Installer;
+using CarpetHandyMan.Shared.Installers;
 using CarpetHandyMan.Shared.Retailers;
 using Microsoft.AspNetCore.Components;
 using System;
@@ -9,15 +9,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CarpetHandyMan.Blazor.Pages.Retailer
+namespace CarpetHandyMan.Blazor.Pages.Installer
 {
-    public class RetailerListBase : ComponentBase
+    public class InstallerListByRetailerModalBase : ComponentBase
     {
+        [Inject] IInstallerService InstallerService { get; set; }
         [Inject] IRetailerService RetailerService { get; set; }
 
         [CascadingParameter] public IModalService Modal { get; set; }
 
-        public List<RetailerListResponse> Retailers;
+        [Parameter] public Guid RetailerId { get; set; }
+
+        public RetailerListResponse Retailer;
+        public List<InstallerListResponse> Installers;
 
         protected async override Task OnInitializedAsync()
         {
@@ -26,15 +30,16 @@ namespace CarpetHandyMan.Blazor.Pages.Retailer
 
         public async Task Refresh()
         {
-            Retailers = await RetailerService.GetAllRetailersAsync();
+            Retailer = await RetailerService.GetOneRetailerAsync(RetailerId);
+            Installers = await InstallerService.GetAllInstallersByRetailerIdAsync(RetailerId);
         }
 
-        public async Task ShowInstallerListAsync(Guid RetailerId)
+        public async Task ShowInstallerAsync(Guid InstallerId)
         {
             var parameters = new ModalParameters();
-            parameters.Add(nameof(InstallerListByRetailerModal.RetailerId), RetailerId);
+            parameters.Add(nameof(OneInstallerModal.InstallerId), InstallerId);
 
-            var InstallerListModal = Modal.Show<InstallerListByRetailerModal>("Installers", parameters);
+            var InstallerListModal = Modal.Show<OneInstallerModal>("Installer", parameters);
             var result = await InstallerListModal.Result;
 
             if (!result.Cancelled)

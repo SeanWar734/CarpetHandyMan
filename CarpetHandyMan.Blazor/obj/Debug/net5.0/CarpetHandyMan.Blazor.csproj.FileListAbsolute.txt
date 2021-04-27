@@ -84,3 +84,7 @@ C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\n
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Estimate\ViewStaircaseModal.razor.g.cs
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\Retailer\RetailerList.razor.g.cs
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Retailer\RetailerList.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\Installer\InstallerListByRetailerModal.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\Installer\OneInstallerModal.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Installer\InstallerListByRetailerModal.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Installer\OneInstallerModal.razor.g.cs

@@ -29,8 +29,8 @@ namespace CarpetHandyMan.Api.Endpoints.Installers
                           ,i.[Area]
                       FROM [dbo].[Installers] i
                       WHERE i.[Id] = @Id;";
-            var Carpet = await connection.ExecuteQueryAsync<InstallerListResponse>(sql, new { Id = id }, cancellationToken: cancellationToken);
-            return Ok(Carpet);
+            var Installer = await connection.ExecuteQueryAsync<InstallerListResponse>(sql, new { Id = id }, cancellationToken: cancellationToken);
+            return Ok(Installer.FirstOrDefault());
         }
     }
 }
