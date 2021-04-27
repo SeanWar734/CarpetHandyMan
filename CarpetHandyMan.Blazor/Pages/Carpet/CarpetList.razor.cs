@@ -33,7 +33,7 @@ namespace CarpetHandyMan.Blazor.Pages.Carpet
             var parameters = new ModalParameters();
             parameters.Add(nameof(ViewOneCarpet.CarpetId), CarpetId);
 
-            var CarpetModal = Modal.Show<ViewOneCarpet>("View Carpet", parameters);
+            var CarpetModal = Modal.Show<ViewOneCarpet>("", parameters);
         }
 
         public async Task ShowAddCarpetModal()

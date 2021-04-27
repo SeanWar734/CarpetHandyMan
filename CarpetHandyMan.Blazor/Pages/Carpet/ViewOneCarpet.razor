@@ -2,13 +2,18 @@
 
 @if (Carpet != null)
 {
+<div class="flex">
     <div>
-        <div class="font-semibold">Name: @Carpet.Name</div>
-        <div class="font-semibold">Brand: @Carpet.Brand</div>
-        <div class="font-semibold">Style: @Carpet.Style</div>
-        <div class="font-semibold">Description: @Carpet.Description</div>
-        <div class="font-semibold">Yard Price: @Carpet.SquareYardPrice.ToString("$#.##")</div>
+        <img width="300" class="border-2 border-gray-700 rounded-md m-1" src="/Images/@Carpet.Image" />
     </div>
+    <div class="border-2 border-gray-700 bg-gray-200 rounded-md">
+        <div class="text-3xl font-bold text-center border-b-2 p-2 border-gray-700 bg-gray-200">@Carpet.Name</div>
+        <div class="text-xl font-semibold">Brand: @Carpet.Brand</div>
+        <div class="text-lg">Style: @Carpet.Style</div>
+        <div class="text-lg break-words">Description: @Carpet.Description</div>
+        <div class="text-lg">Yard Price: @Carpet.SquareYardPrice.ToString("$#.##")</div>
+    </div>
+</div>
 }
 else
 {
