@@ -1,0 +1,47 @@
+﻿@inherits EditCarpetModalBase
+
+@if (Carpet != null)
+{
+    <EditForm Model="Carpet" OnValidSubmit="(() => Confirm(Carpet))">
+        <div class="bg-gray-200 border-2 border-gray-700 rounded-md w-min p-2">
+            <div>Carpet Name:</div>
+            <InputText @bind-Value="Carpet.Name" />
+        </div>
+        <br />
+        <div class="bg-gray-200 border-2 border-gray-700 rounded-md w-min p-2">
+            <div>Carpet Brand</div>
+            <InputText @bind-Value="Carpet.Brand" />
+        </div>
+        <br />
+        <div class="bg-gray-200 border-2 border-gray-700 rounded-md w-min p-2">
+            <div>Carpet Style</div>
+            <InputText @bind-Value="Carpet.Style" />
+        </div>
+        <br />
+        <div class="bg-gray-200 border-2 border-gray-700 rounded-md w-min p-2">
+            <div>Carpet Description</div>
+            <InputText @bind-Value="Carpet.Description" />
+        </div>
+        <br />
+        <div class="bg-gray-200 border-2 border-gray-700 rounded-md w-min p-2">
+            <div>Carpet Length</div>
+            <InputNumber @bind-Value="Carpet.Length" />
+        </div>
+        <br />
+        <div class="bg-gray-200 border-2 border-gray-700 rounded-md w-min p-2">
+            <div>Carpet Width</div>
+            <InputNumber @bind-Value="Carpet.Width" />
+        </div>
+        <br />
+
+        <div>
+            <div class="bg-gray-200 border-2 border-gray-700 rounded-md w-min p-2">
+                <div>Carpet Price</div>
+                <InputNumber @bind-Value="Carpet.SquareYardPrice" />
+            </div>
+        </div>
+
+
+        <button class="rounded-md border-gray-700 bg-gray-200" type="submit">Confirm</button>
+    </EditForm>
+}

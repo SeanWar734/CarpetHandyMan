@@ -1,4 +1,5 @@
-﻿using Blazored.Modal.Services;
+﻿using Blazored.Modal;
+using Blazored.Modal.Services;
 using CarpetHandyMan.Blazor.Interfaces;
 using CarpetHandyMan.Blazor.Pages.Modals;
 using CarpetHandyMan.Shared.Carpets;
@@ -38,6 +39,23 @@ namespace CarpetHandyMan.Blazor.Pages.Carpet
             if (!result.Cancelled)
             {
                 await CarpetService.DeleteCarpetAsync(CarpetId);
+                await Refresh();
+            }
+        }
+
+        public async Task ShowEditCarpetModal()
+        {
+            var parameters = new ModalParameters();
+            parameters.Add(nameof(EditCarpetModal.EditCarpet), Carpet);
+
+            var ShowEditCarpetModal = Modal.Show<EditCarpetModal>("Edit", parameters);
+            var result = await ShowEditCarpetModal.Result;
+
+            if (!result.Cancelled)
+            {
+                await Refresh();
+            } else
+            {
                 await Refresh();
             }
         }

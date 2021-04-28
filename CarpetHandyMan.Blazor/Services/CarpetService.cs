@@ -45,7 +45,7 @@ namespace CarpetHandyMan.Blazor.Services
         public async Task UpdateCarpetAsync(UpdateCarpetRequest carpetRequest)
         {
             var CarpetJson = new StringContent(JsonSerializer.Serialize(carpetRequest), Encoding.UTF8, "application/json");
-            await HttpClient.PutAsync($"purchaseitems/{carpetRequest.Id}", CarpetJson);
+            await HttpClient.PutAsync($"carpet", CarpetJson);
         }
     }
 }

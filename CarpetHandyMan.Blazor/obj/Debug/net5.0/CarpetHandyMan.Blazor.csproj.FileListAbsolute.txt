@@ -92,3 +92,5 @@ C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\n
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Retailer\AddRetailerModal.razor.g.cs
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\Installer\AddInstallerModal.razor.g.cs
 C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Installer\AddInstallerModal.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\RazorDeclaration\Pages\Carpet\EditCarpetModal.razor.g.cs
+C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\obj\Debug\net5.0\Razor\Pages\Carpet\EditCarpetModal.razor.g.cs

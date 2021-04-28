@@ -33,7 +33,8 @@ namespace CarpetHandyMan.Api.Endpoints.Carpets
                 SquareYardPrice = request.SquareYardPrice,
                 Style = request.Style,
                 Brand = request.Brand,
-                Description = request.Description
+                Description = request.Description,
+                Image = request.Image
             };
 
             _repo.UpdateCarpet(Carpet);

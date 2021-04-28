@@ -18,7 +18,7 @@ namespace CarpetHandyMan.Blazor.Pages.Carpet
 
         public CreateCarpetRequest Carpet;
 
-        protected async override Task OnInitializedAsync()
+        protected override void OnInitialized()
         {
             Carpet = new CreateCarpetRequest();
         }
