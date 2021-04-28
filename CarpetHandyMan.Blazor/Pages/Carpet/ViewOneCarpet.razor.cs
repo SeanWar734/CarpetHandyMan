@@ -1,4 +1,6 @@
-﻿using CarpetHandyMan.Blazor.Interfaces;
+﻿using Blazored.Modal.Services;
+using CarpetHandyMan.Blazor.Interfaces;
+using CarpetHandyMan.Blazor.Pages.Modals;
 using CarpetHandyMan.Shared.Carpets;
 using Microsoft.AspNetCore.Components;
 using System;
@@ -15,6 +17,8 @@ namespace CarpetHandyMan.Blazor.Pages.Carpet
 
         [Parameter] public Guid CarpetId { get; set; }
 
+        [CascadingParameter] public IModalService Modal { get; set; }
+
         public CarpetListReponse Carpet { get; set; }
         protected async override Task OnInitializedAsync()
         {
@@ -24,6 +28,18 @@ namespace CarpetHandyMan.Blazor.Pages.Carpet
         public async Task Refresh()
         {
             Carpet = await CarpetService.GetOneCarpetAsync(CarpetId);
+        }
+
+        public async Task ShowDeleteCarpetConfirmationModal(Guid CarpetId)
+        {
+            var RemoveCarpetModal = Modal.Show<Confirmation>("Are you sure you would like to delete this carpet?");
+            var result = await RemoveCarpetModal.Result;
+
+            if (!result.Cancelled)
+            {
+                await CarpetService.DeleteCarpetAsync(CarpetId);
+                await Refresh();
+            }
         }
     }
 }

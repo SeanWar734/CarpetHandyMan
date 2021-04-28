@@ -2,18 +2,20 @@
 
 @if (Carpet != null)
 {
-<div class="flex">
-    <div>
-        <img width="300" class="border-2 border-gray-700 rounded-md m-1" src="/Images/@Carpet.Image" />
+    <div class="flex">
+        <div>
+            <img width="300" class="border-2 border-gray-700 rounded-md m-1" src="/Images/@Carpet.Image" />
+        </div>
+        <div class="border-2 border-gray-700 bg-gray-200 rounded-md">
+            <div class="text-3xl font-bold text-center border-b-2 p-2 border-gray-700 bg-gray-200">@Carpet.Name</div>
+            <div class="text-xl font-semibold">Brand: @Carpet.Brand</div>
+            <div class="text-lg">Style: @Carpet.Style</div>
+            <div class="text-lg break-words">Description: @Carpet.Description</div>
+            <div class="text-lg">Yard Price: @Carpet.SquareYardPrice.ToString("$#.##")</div>
+        </div>
     </div>
-    <div class="border-2 border-gray-700 bg-gray-200 rounded-md">
-        <div class="text-3xl font-bold text-center border-b-2 p-2 border-gray-700 bg-gray-200">@Carpet.Name</div>
-        <div class="text-xl font-semibold">Brand: @Carpet.Brand</div>
-        <div class="text-lg">Style: @Carpet.Style</div>
-        <div class="text-lg break-words">Description: @Carpet.Description</div>
-        <div class="text-lg">Yard Price: @Carpet.SquareYardPrice.ToString("$#.##")</div>
-    </div>
-</div>
+    <div class="text-lg mt-1 bottom-0 w-16 float-right rounded-md border-2 border-gray-700 bg-red-200 hover:bg-red-400"><button @onclick="(() => ShowDeleteCarpetConfirmationModal(Carpet.Id))">Delete</button></div>
+
 }
 else
 {

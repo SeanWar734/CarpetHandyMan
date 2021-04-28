@@ -6,15 +6,16 @@
     <div class="flex flex-wrap m-1">
         @foreach (var Retailer in Retailers)
         {
-        <div class="border-gray-700 bg-gray-200 rounded-md w-1/4 p-2 border-2 m-1">
-            <div class="p-2 mb-1 text-xl border-2 border-black rounded-md bg-white font-bold">@Retailer.CompanyName</div>
-            <div class="p-2 mb-1 text-lg border-2 border-black rounded-md bg-white font-semibold">@Retailer.Description</div>
-            <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.PhoneNumber</div>
-            <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.Address</div>
-            <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.City</div>
-            <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.State</div>
-            <div class="p-2 mb-1 border-2 border-black rounded-md hover:bg-gray-400 bg-gray-200 text-center"><button class="text-lg font-bold" @onclick="(() => ShowInstallerListAsync(Retailer.Id))">View Installers</button></div>
-        </div>
+            <div class="border-gray-700 bg-gray-200 rounded-md w-1/4 p-2 border-2 m-1">
+                <div class="p-2 mb-1 text-xl border-2 border-black rounded-md bg-white font-bold">@Retailer.CompanyName</div>
+                <div class="p-2 mb-1 text-lg border-2 border-black rounded-md bg-white font-semibold">@Retailer.Description</div>
+                <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.PhoneNumber</div>
+                <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.Address</div>
+                <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.City</div>
+                <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.State</div>
+                <div class="p-2 mb-1 border-2 border-black rounded-md hover:bg-gray-400 bg-gray-200 text-center"><button class="text-lg font-bold" @onclick="(() => ShowInstallerListAsync(Retailer.Id))">View Installers</button></div>
+                <div class="p-2 mb-1 border-2 border-black rounded-md hover:bg-red-400 bg-red-200 text-center"><button class="text-lg font-bold" @onclick="(() => ShowRemoveRetailerModalAsync(Retailer.Id))">Remove @Retailer.CompanyName</button></div>
+            </div>
         }
     </div>
     <button class="p-2 border-2 border-gray-700 hover:bg-gray-400 bg-gray-200 rounded-md" @onclick="(() => ShowAddRetailerModalAsync())">Add Retailer</button>

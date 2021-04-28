@@ -2,6 +2,7 @@
 using Blazored.Modal.Services;
 using CarpetHandyMan.Blazor.Interfaces;
 using CarpetHandyMan.Blazor.Pages.Installer;
+using CarpetHandyMan.Blazor.Pages.Modals;
 using CarpetHandyMan.Shared.Retailers;
 using Microsoft.AspNetCore.Components;
 using System;
@@ -14,6 +15,7 @@ namespace CarpetHandyMan.Blazor.Pages.Retailer
     public class RetailerListBase : ComponentBase
     {
         [Inject] IRetailerService RetailerService { get; set; }
+        [Inject] IInstallerService InstallerService { get; set; }
 
         [CascadingParameter] public IModalService Modal { get; set; }
 
@@ -50,6 +52,23 @@ namespace CarpetHandyMan.Blazor.Pages.Retailer
 
             if (!result.Cancelled)
             {
+                await Refresh();
+            }
+        }
+
+        public async Task ShowRemoveRetailerModalAsync(Guid RetailerId)
+        {
+            var DeleteRetailerModal = Modal.Show<Confirmation>("Are you sure you want to delete this Retailer?");
+            var result = await DeleteRetailerModal.Result;
+
+            if (!result.Cancelled)
+            {
+                var Installers = await InstallerService.GetAllInstallersByRetailerIdAsync(RetailerId);
+                foreach (var installer in Installers)
+                {
+                    await InstallerService.DeleteInstallerAsync(installer.Id);
+                }
+                await RetailerService.DeleteRetailerAsync(RetailerId);
                 await Refresh();
             }
         }

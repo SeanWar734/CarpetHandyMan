@@ -1,29 +1,31 @@
 ﻿@if (IsVisable)
 {
-<div class="bg-gray-300">
-    <div class="flex justify-center items-center">
-        <div class="w-80 h-96 bg-white rounded shadow-2xl">
-            <nav class="w-full h-10 bg-gray-900 rounded-tr rounded-tl flex justify-between items-center">
-                <div class="flex items-center">Help</div>
-            </nav>
-            <div class="overflow-auto px-1 py-1" style="height: 19rem;" id="journal-scroll">
-                <div class="flex items-center pr-10"><span class="flex ml-1 h-auto bg-gray-900 text-gray-200 text-xs font-normal rounded-sm px-1 p-1 items-end" style="font-size: 10px;">Hello, How can I help you today?</span> </div>
-                @foreach (var Message in Messages)
-                {
-                    <div class="flex justify-end pt-2 pl-10"> <span class="bg-green-900 h-auto text-gray-200 text-xs font-normal rounded-sm px-1 p-1 items-end flex justify-end " style="font-size: 10px;">@Message.Text</span> </div>
-                }
-            </div>
-            <EditForm Model="NewMessage" OnValidSubmit="(() => AddMessage(NewMessage))">
-                <div class="flex justify-between items-center p-1 ">
-                    <div class="relative">
-                        <InputText @bind-Value="NewMessage.Text" class="rounded-full pl-6 pr-12 py-2 focus:outline-none h-auto placeholder-gray-100 bg-gray-900 text-white" style="font-size: 11px;width: 250px;" placeholder="Type a message..." /></div>
-                  <div class="w-16 h-7 rounded-full bg-blue-300 text-center items-center flex justify-center hover:bg-gray-900 border-gray-900 hover:text-white"><button type="submit"> <span>Send</span> </button>
-                    </div>
+    <div class="bg-gray-300">
+        <div class="flex justify-center items-center">
+            <div class="w-80 h-96 bg-white rounded shadow-2xl">
+                <nav class="w-full h-10 bg-gray-900 rounded-tr rounded-tl flex justify-between items-center">
+                    <div class="flex items-center">Help</div>
+                </nav>
+                <div class="overflow-auto px-1 py-1" style="height: 19rem;" id="journal-scroll">
+                    <div class="flex items-center pr-10"><span class="flex ml-1 h-auto bg-gray-900 text-gray-200 text-xs font-normal rounded-sm px-1 p-1 items-end" style="font-size: 10px;">Hello, How can I help you today?</span> </div>
+                    @foreach (var Message in Messages)
+                    {
+                        <div class="flex justify-end pt-2 pl-10"> <span class="bg-green-900 h-auto text-gray-200 text-xs font-normal rounded-sm px-1 p-1 items-end flex justify-end " style="font-size: 10px;">@Message.Text</span> </div>
+                    }
                 </div>
-            </EditForm>
+                <EditForm Model="NewMessage" OnValidSubmit="(() => AddMessage(NewMessage))">
+                    <div class="flex justify-between items-center p-1 ">
+                        <div class="relative">
+                            <InputText @bind-Value="NewMessage.Text" class="rounded-full pl-6 pr-12 py-2 focus:outline-none h-auto placeholder-gray-100 bg-gray-900 text-white" style="font-size: 11px;width: 250px;" placeholder="Type a message..." />
+                        </div>
+                        <div class="w-16 h-7 rounded-full bg-blue-300 text-center items-center flex justify-center hover:bg-gray-900 border-gray-900 hover:text-white">
+                            <button type="submit"> <span>Send</span> </button>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
         </div>
     </div>
-</div>
 }
 <div class="flex float-right">
     @if (!IsOpened)
@@ -44,10 +46,10 @@
         IsOpened = true;
         IsVisable = !IsVisable;
     }
- 
+
     public void AddMessage(Message message)
     {
-        
+
         Messages.Add(message);
         NewMessage = new Message();
     }

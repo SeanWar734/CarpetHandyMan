@@ -97,7 +97,7 @@ using Blazored.Modal.Services;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 36 "C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\Components\Chat.razor"
+#line 38 "C:\Users\swarchuck\source\repos\CarpetHandyMan\CarpetHandyMan.Blazor\Components\Chat.razor"
        
     public bool IsVisable = false;
     public bool IsOpened = false;
@@ -109,10 +109,10 @@ using Blazored.Modal.Services;
         IsOpened = true;
         IsVisable = !IsVisable;
     }
- 
+
     public void AddMessage(Message message)
     {
-        
+
         Messages.Add(message);
         NewMessage = new Message();
     }
