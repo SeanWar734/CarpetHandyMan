@@ -13,9 +13,9 @@
             <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.Address</div>
             <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.City</div>
             <div class="p-2 mb-1 text-sm border-2 border-black rounded-md bg-white">@Retailer.State</div>
-            <div class="p-2 mb-1 border-2 border-black rounded-md bg-gray-200 text-center"><button class="text-lg font-bold" @onclick="(() => ShowInstallerListAsync(Retailer.Id))">View Installers</button></div>
+            <div class="p-2 mb-1 border-2 border-black rounded-md hover:bg-gray-400 bg-gray-200 text-center"><button class="text-lg font-bold" @onclick="(() => ShowInstallerListAsync(Retailer.Id))">View Installers</button></div>
         </div>
         }
     </div>
-    <button class="p-2 border-2 border-gray-700 bg-gray-200 rounded-md" @onclick="(() => ShowAddRetailerModalAsync())">Add Retailer</button>
+    <button class="p-2 border-2 border-gray-700 hover:bg-gray-400 bg-gray-200 rounded-md" @onclick="(() => ShowAddRetailerModalAsync())">Add Retailer</button>
 }

@@ -62,17 +62,5 @@ namespace CarpetHandyMan.Blazor.Pages.Installer
                 await Refresh();
             }
         }
-
-        public async Task ShowRemoveInstallerConfirmationModal(Guid InstallerId)
-        {
-            var RemoveInstallerConfirmationModal = Modal.Show<Confirmation>("Are you sure you want to remove this Installer");
-            var result = await RemoveInstallerConfirmationModal.Result;
-
-            if (!result.Cancelled)
-            {
-                await InstallerService.DeleteInstallerAsync(InstallerId);
-                await Refresh();
-            }
-        }
     }
 }

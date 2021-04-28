@@ -12,7 +12,6 @@
             @foreach (var Installer in Installers)
             {
                 <div class="border-2 bg-gray-200 border-gray-700 p-2 m-1">
-                    <div class="float-right mr-2"><button @onclick="(() => ShowRemoveInstallerConfirmationModal(Installer.Id))">x</button></div>
                     <div class="mb-1 rounded-md border-2 border-gray-700 bg-white text-center w-56"><button class="text-3xl font-bold" @onclick="(() => ShowInstallerAsync(Installer.Id))">@Installer.FirstName @Installer.LastName</button></div>
                     <div class="mb-1 border-2 border-gray-700 bg-white">Price per Yard: @Installer.SquareYardPrice.ToString("C")</div>
                     <div class="mb-1 border-2 border-gray-700 bg-white">Area Installed: @Installer.Area</div>
@@ -21,7 +20,7 @@
         }
     </div>
     <div>
-        <button class="p-2 border-2 border-gray-700 bg-gray-200 rounded-md" @onclick="(() => ShowAddInstallerModalAsync(RetailerId))">Add Installer</button>
+        <button class="p-2 border-2 border-gray-700 bg-gray-200 hover:bg-gray-400 rounded-md" @onclick="(() => ShowAddInstallerModalAsync(RetailerId))">Add Installer</button>
     </div>
 }
 else
