@@ -1,6 +1,7 @@
 ﻿using Blazored.Modal;
 using Blazored.Modal.Services;
 using CarpetHandyMan.Blazor.Interfaces;
+using CarpetHandyMan.Blazor.Pages.Modals;
 using CarpetHandyMan.Shared.Installers;
 using CarpetHandyMan.Shared.Retailers;
 using Microsoft.AspNetCore.Components;
@@ -44,6 +45,32 @@ namespace CarpetHandyMan.Blazor.Pages.Installer
 
             if (!result.Cancelled)
             {
+                await Refresh();
+            }
+        }
+
+        public async Task ShowAddInstallerModalAsync(Guid RetailerId)
+        {
+            var parameters = new ModalParameters();
+            parameters.Add(nameof(AddInstallerModal.RetailerId), RetailerId);
+
+            var InstallerListModal = Modal.Show<AddInstallerModal>("Add Installer", parameters);
+            var result = await InstallerListModal.Result;
+
+            if (!result.Cancelled)
+            {
+                await Refresh();
+            }
+        }
+
+        public async Task ShowRemoveInstallerConfirmationModal(Guid InstallerId)
+        {
+            var RemoveInstallerConfirmationModal = Modal.Show<Confirmation>("Are you sure you want to remove this Installer");
+            var result = await RemoveInstallerConfirmationModal.Result;
+
+            if (!result.Cancelled)
+            {
+                await InstallerService.DeleteInstallerAsync(InstallerId);
                 await Refresh();
             }
         }

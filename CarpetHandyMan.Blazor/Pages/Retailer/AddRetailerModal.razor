@@ -1,0 +1,52 @@
+﻿@inherits AddRetailerModalBase
+
+@if (Retailer != null)
+{
+<div class="">
+    <EditForm Model="Retailer" OnValidSubmit="(() => AddNewRetailerAsync(Retailer))">
+        <div class="rounded-md border-2 border-gray-700 bg-gray-200 p-2">
+            <div class="mb-1 rounded-md border-2 border-gray-700 bg-white p-2">
+                <div>Comapany Name</div>
+                <div class="border-black border-2">
+                    <InputText style="width: 100%" placeholder="Enter Company Name..." @bind-Value="Retailer.CompanyName" />
+                </div>
+            </div>
+            <div class="mb-1 rounded-md border-2 border-gray-700 bg-white p-2">
+                <div>Description</div>
+                <div class="border-black border-2">
+                    <InputText style="width: 100%" placeholder="Enter Company Description..." @bind-Value="Retailer.Description" />
+                </div>
+            </div>
+            <div class="mb-1 rounded-md border-2 border-gray-700 bg-white p-2">
+                <div>Phone Number</div>
+                <div class="border-black border-2">
+                    <InputText style="width: 100%" placeholder="Enter Company Phone Number..." @bind-Value="Retailer.PhoneNumber" />
+                </div>
+            </div>
+            <div class="mb-1 rounded-md border-2 border-gray-700 bg-white p-2">
+                <div>Address Line 1</div>
+                <div class="border-black border-2">
+                    <InputText style="width: 100%" placeholder="Enter Company Address..." @bind-Value="Retailer.Address" />
+                </div>
+            </div>
+            <div class="mb-1 rounded-md border-2 border-gray-700 bg-white p-2">
+                <div>City</div>
+                <div class="border-black border-2">
+                    <InputText style="width: 100%" placeholder="Enter Company City..." @bind-Value="Retailer.City" />
+                </div>
+            </div>
+            <div class="mb-1 rounded-md border-2 border-gray-700 bg-white p-2">
+                <div>State</div>
+                <div class="border-black border-2">
+                    <InputText style="width: 100%" placeholder="Enter Company State..." @bind-Value="Retailer.State" />
+                </div>
+            </div>
+        </div>
+        <button type="submit">Add</button>
+    </EditForm>
+</div>
+}
+else
+{
+    <span>Loading...</span>
+}

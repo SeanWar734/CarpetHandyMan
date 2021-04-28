@@ -42,5 +42,16 @@ namespace CarpetHandyMan.Blazor.Pages.Retailer
                 await Refresh();
             }
         }
+
+        public async Task ShowAddRetailerModalAsync()
+        {
+            var AddRetailerModal = Modal.Show<AddRetailerModal>("Add Retailer");
+            var result = await AddRetailerModal.Result;
+
+            if (!result.Cancelled)
+            {
+                await Refresh();
+            }
+        }
     }
 }
