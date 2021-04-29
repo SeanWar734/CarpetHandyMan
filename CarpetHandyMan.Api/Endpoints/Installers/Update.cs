@@ -20,7 +20,7 @@ namespace CarpetHandyMan.Api.Endpoints.Installers
             _repo = repo;
         }
 
-        [HttpPut("/installers/{id}")]
+        [HttpPut("/installers")]
         public override async Task<ActionResult> HandleAsync([FromBody] UpdateInstallerRequest request, CancellationToken cancellationToken = default)
         {
 

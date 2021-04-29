@@ -43,5 +43,19 @@ namespace CarpetHandyMan.Blazor.Pages.Installer
                 await ModalInstance.CloseAsync();
             }
         }
+
+        public async Task ShowEditInstallerModal()
+        {
+            var parameters = new ModalParameters();
+            parameters.Add(nameof(EditInstallerModal.EditInstaller), Installer);
+
+            var ShowEditInstallerModal = Modal.Show<EditInstallerModal>("Edit", parameters);
+            var result = await ShowEditInstallerModal.Result;
+
+            if (!result.Cancelled)
+            {
+                await Refresh();
+            }
+        }
     }
 }

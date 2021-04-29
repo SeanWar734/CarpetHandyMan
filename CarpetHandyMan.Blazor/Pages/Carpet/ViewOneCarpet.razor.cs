@@ -54,9 +54,6 @@ namespace CarpetHandyMan.Blazor.Pages.Carpet
             if (!result.Cancelled)
             {
                 await Refresh();
-            } else
-            {
-                await Refresh();
             }
         }
     }
